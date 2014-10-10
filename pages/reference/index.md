@@ -22,22 +22,6 @@ $ source bashmenot/bashmenot.sh
 Individual modules can also be sourced separately, as long as their dependencies are sourced as well.
 
 
-Environment variables
----------------------
-
-
-### `HALCYON_AWS_ACCESS_KEY_ID`
-> Default value:  _none_
-
-Part of the authentication details used by all [Amazon S3 transfer functions](#amazon-s3-transfer-functions).
-
-
-### `HALCYON_AWS_SECRET_ACCESS_KEY`
-> Default value:  _none_
-
-Like [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id), but secret.
-
-
 Logging functions
 -----------------
 
@@ -1009,3 +993,19 @@ $ s3_delete foo.halcyon.sh foo/bar
 $ s3_delete foo.halcyon.sh ''
        Deleting s3://foo.halcyon.sh/... done, 204
 ```
+
+
+Environment variables
+---------------------
+
+
+### `HALCYON_AWS_ACCESS_KEY_ID`
+> Default value:  _none_
+
+Part of the authentication details used by all [Amazon S3 transfer functions](#amazon-s3-transfer-functions).
+
+
+### `HALCYON_AWS_SECRET_ACCESS_KEY`
+> Default value:  _none_
+
+Like [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id), but secret.
