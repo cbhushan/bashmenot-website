@@ -593,7 +593,7 @@ Functions for user-friendly communication of file system changes to the user, an
 ### `find_added`
 > Arguments:  _`old_dir new_dir`_
 
-Output paths to files which exist in the old directory and do not exist in the new one, in natural order.
+Output paths to files which do not exist in the old directory and exist in the new one, in natural order.
 
 ```
 $ mkdir foo1 foo2
