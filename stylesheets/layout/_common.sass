@@ -1,0 +1,23 @@
+body
+  font-family: "concourse-t3", sans-serif
+
+code
+  font-family: "pragmatapro", monospace
+
+
+nav.menu-bar h1.logotype a
+  font-style: italic
+
+header nav.menu-bar h1.logotype a
+  color: $object-color
+  @include frob-when-frobbed
+    color: $accent-color
+
+footer nav.menu-bar h1.logotype a
+  color: $subject-color
+  @include frob-when-frobbed
+    color: $accent-color
+
+
+header.index nav.menu-bar h1.logotype a
+  color: $accent-color

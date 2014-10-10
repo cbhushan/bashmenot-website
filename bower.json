@@ -1,0 +1,11 @@
+{
+  "name": "bashmenot-website",
+  "description": "bashmenot website",
+  "authors": [
+    "Miëtek Bak <hello@mietek.io>"
+  ],
+  "license": "MIT X11",
+  "dependencies": {
+    "cannot": "*"
+  }
+}
