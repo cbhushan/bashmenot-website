@@ -13,7 +13,13 @@ page-head: |
 Programmer’s reference
 ======================
 
-Please report any problems with the documentation on the [_bashmenot-website_ issue tracker](https://github.com/mietek/bashmenot-website/issues/).
+Sourcing the top-level script brings all functions into scope.
+
+```
+$ source bashmenot/bashmenot.sh
+```
+
+Individual modules can also be sourced separately, as long as their dependencies are sourced as well.
 
 
 Environment variables

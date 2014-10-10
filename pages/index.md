@@ -1,6 +1,6 @@
 ---
 title: Functions for safer shell scripting
-header-class: index
+page-class: index
 page-footer: |
   <script>
     addEventListener('load', function () {
@@ -9,7 +9,8 @@ page-footer: |
   </script>
 ---
 
-Functions for safer shell scripting
+
+Functions for safer shell scripting
 ===================================
 
 Used in [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonheroku.com/).
@@ -18,15 +19,7 @@ Used in [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonhe
 Usage
 -----
 
-Sourcing the top-level script brings all functions into scope.
-
-```
-$ source bashmenot/bashmenot.sh
-```
-
-Individual modules can also be sourced separately, as long as their dependencies are sourced as well.
-
-Please refer to the [programmer reference](reference/) for more information, including examples and module dependencies.
+Please see the [programmer’s reference](reference/) for a complete description of each function, including usage examples.
 
 
 ### Installation
