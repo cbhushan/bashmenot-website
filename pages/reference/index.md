@@ -622,6 +622,8 @@ bar
 
 Output paths to files which do not differ between the two directories, in natural order.
 
+Complementary to [find_changed](#find_changed).
+
 ```
 $ mkdir foo1 foo2
 $ echo baz >foo1/baz
@@ -669,7 +671,7 @@ $ compare_recursively foo1 foo2
 ### `find_spaceless_recursively`
 > Arguments:  _`dir`_
 
-Output all paths containing no spaces to files which are descendants of the specified directory.
+Output all paths to files which are descendants of the specified directory, such that the paths contain no spaces.
 
 ```
 $ mkdir foo 'foo/foo bar'
