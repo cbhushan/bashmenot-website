@@ -775,7 +775,7 @@ Functions to simplify HTTP transfers, with user-friendly logging and failure han
 ### `curl_do`
 > Arguments:  _`url`_
 
-Wrapper for _curl_,  Used by every function in this module.
+Wrapper for _curl_.  Used by every function in this module.
 
 All messages are logged to error output.
 
