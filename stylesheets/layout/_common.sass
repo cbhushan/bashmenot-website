@@ -4,9 +4,25 @@ body
 code
   font-family: "pragmatapro", monospace
 
+.small-caps
+  font-family: "concourse-c3", sans-serif
+  font-variant: normal
+  letter-spacing: -1px
+
 
 nav.menu-bar h1.logotype a
+  @include smart-image-glow-after($accent-color)
   font-style: italic
+  position: relative
+  &:after
+    display: block
+    width: ln(1)
+    height: 100%
+    background-size: ln(1) ln(1)
+    background-position: center center
+    position: absolute
+    top: 0
+    content: ""
 
 header nav.menu-bar h1.logotype a
   color: $object-color
@@ -19,5 +35,5 @@ footer nav.menu-bar h1.logotype a
     color: $accent-color
 
 
-header.index nav.menu-bar h1.logotype a
+.index header nav.menu-bar h1.logotype a
   color: $accent-color
