@@ -936,7 +936,7 @@ $ s3_check foo.halcyon.sh no-foo
 
 Upload the specified file to S3 with HTTP `PUT`.
 
-The destination resource is assigned the specified ACL.  Commonly used values are `private` and `public-read`.
+The destination resource is assigned the specified S3 ACL.  Commonly used values are `private` and `public-read`.
 
 **Overwrites** existing resources without warning.  Returns `1` on failure.
 
@@ -951,7 +951,7 @@ $ s3_upload foo foo.halcyon.sh bar/foo private
 
 Create an S3 bucket with HTTP `PUT`.
 
-As with [`s3_upload`](#s3_upload), the destination is assigned the specified ACL.
+As with [`s3_upload`](#s3_upload), the destination is assigned the specified S3 ACL.
 
 Returns `1` on failure.
 
