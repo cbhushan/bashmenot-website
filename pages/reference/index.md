@@ -312,7 +312,7 @@ Quoting module
 > Source:
 > [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh)\
 > Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
+> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
 
 Additional functions to simplify communication with the user, including quiet mode support.
@@ -515,7 +515,9 @@ Sorting module
 > Dependencies:
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
 
-Cross-platform compatibility functions.  GNU _sort_ is required.
+Requires GNU _sort_.
+
+Cross-platform compatibility functions.
 
 
 ### `sort_naturally`
@@ -551,7 +553,9 @@ Date formatting module
 > Dependencies:
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
 
-Cross-platform compatibility functions.  GNU _date_ is required.
+Requires GNU _date_.
+
+Cross-platform compatibility functions.
 
 
 ### `echo_date`
@@ -588,7 +592,7 @@ File system manipulation module
 > Source:
 > [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)\
 > Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
 
 Functions for user-friendly communication of file system changes to the user, and file utilities
@@ -709,8 +713,8 @@ File archiving module
 > Source:
 > [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)\
 > Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
+> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
 
 Functions to simplify cross-platform archiving of files, with added safety.
@@ -770,10 +774,12 @@ HTTP transfer module
 > Source:
 > [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)\
 > Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
+> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 
-Functions to simplify HTTP transfers, with user-friendly logging and failure handling.  _curl_ is required.
+Requires _curl_.
+
+Functions to simplify HTTP transfers, with user-friendly logging and failure handling.
 
 
 ### `curl_do`
@@ -842,13 +848,15 @@ Amazon S3 transfer module
 > Source:
 > [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)\
 > Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
-> [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
-> [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)
+> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
+> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
+> [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh),
+> [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh),
 > [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)
 
-Functions to simplify Amazon S3 transfers, with user-friendly logging and failure handling.  _curl_ and OpenSSL are required.
+Requires _curl_ and OpenSSL.
+
+Functions to simplify Amazon S3 transfers, with user-friendly logging and failure handling.
 
 Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
