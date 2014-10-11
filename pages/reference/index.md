@@ -586,8 +586,8 @@ $ echo_timestamp
 ```
 
 
-File system manipulation module
--------------------------------
+File system module
+------------------
 
 > Source:
 > [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)\
@@ -595,7 +595,7 @@ File system manipulation module
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
 
-Functions for user-friendly communication of file system changes to the user, and file utilities
+Functions for communicating file system changes to the user, and related utilities.
 
 
 ### `find_added`
