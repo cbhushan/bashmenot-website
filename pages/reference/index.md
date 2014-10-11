@@ -13,17 +13,21 @@ page-head: |
 Programmer’s reference
 ======================
 
-Sourcing the top-level script brings all functions into scope.
+
+Module usage
+------------
+
+Sourcing the top-level _bashmenot_ module brings all functions into scope, without any side effects.
 
 ```
 $ source bashmenot/bashmenot.sh
 ```
 
-Individual modules can also be sourced separately, as long as their dependencies are sourced as well.
+Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced as well.
 
 
-Logging functions
------------------
+Logging module
+--------------
 
 > Source:
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)\
@@ -161,8 +165,8 @@ $ foo
 ```
 
 
-Expectation control functions
------------------------------
+Expectation control module
+--------------------------
 
 > Source:
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)\
@@ -258,8 +262,8 @@ no bar
 ```
 
 
-OS detection functions
-----------------------
+OS detection module
+-------------------
 
 > Source:
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)\
@@ -302,8 +306,8 @@ linux-ubuntu-14-04-x64
 ```
 
 
-Quoting functions
------------------
+Quoting module
+--------------
 
 > Source:
 > [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh)\
@@ -361,8 +365,8 @@ $ quote_quietly 1 bar
 ```
 
 
-Line processing functions
--------------------------
+Line processing module
+----------------------
 
 > Source:
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)\
@@ -503,8 +507,8 @@ foo
 ```
 
 
-Sorting functions
------------------
+Sorting module
+--------------
 
 > Source:
 > [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)\
@@ -539,8 +543,8 @@ foo-2
 Like [`sort_naturally`](#sort_naturally), but with input separated by `NUL` bytes instead of newlines.
 
 
-Date formatting functions
--------------------------
+Date formatting module
+----------------------
 
 > Source:
 > [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)\
@@ -578,8 +582,8 @@ $ echo_timestamp
 ```
 
 
-File system manipulation functions
-----------------------------------
+File system manipulation module
+-------------------------------
 
 > Source:
 > [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)\
@@ -699,8 +703,8 @@ $ measure_recursively foo
 Process a file of paths separated by `NUL` bytes, removing symbols from each listed file.
 
 
-File archiving functions
-------------------------
+File archiving module
+---------------------
 
 > Source:
 > [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)\
@@ -732,7 +736,7 @@ $ echo_tar_format_flag bar.tar.xz
 
 Archive the specified directory, using a compression format determined by the name of the archive.
 
-Does not overwrite existing files.  Creates the destination directory if needed.
+Does not overwrite existing files.  Creates the destination directory if needed.  Any additional arguments are passed to _tar_ verbatim.
 
 
 ### `tar_extract`
@@ -760,8 +764,8 @@ foo/baz/bar.tar.gz
 ```
 
 
-HTTP transfer functions
------------------------
+HTTP transfer module
+--------------------
 
 > Source:
 > [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)\
@@ -832,8 +836,8 @@ $ curl_delete httpbin.org/delete
 ```
 
 
-Amazon S3 transfer functions
-----------------------------
+Amazon S3 transfer module
+-------------------------
 
 > Source:
 > [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)\
@@ -1004,7 +1008,7 @@ Environment variables
 ### `HALCYON_AWS_ACCESS_KEY_ID`
 > Default value:  _none_
 
-Part of the authentication details used by all [Amazon S3 transfer functions](#amazon-s3-transfer-functions).
+Part of the authentication details used by the [Amazon S3 transfer module](#amazon-s3-transfer-module).
 
 
 ### `HALCYON_AWS_SECRET_ACCESS_KEY`
