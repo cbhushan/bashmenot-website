@@ -1,7 +1,7 @@
-_bashmenot_ website
+_bashmenot-website_
 ===================
 
-Documentation for [_bashmenot_](http://bashmenot.mietek.io/).
+[_bashmenot_ website](http://bashmenot.mietek.io/).
 
 Built with [_cannot_](http://cannot.mietek.io/).
 
