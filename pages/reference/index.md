@@ -338,7 +338,7 @@ $ echo foo | quote
 
 Execute the specified command with its output quoted or omitted, depending on the value of _`quiet`_ and the exit status of the command.
 
-If _`quiet`_ is `0`, output is always quoted.  Otherwise, output is quoted if the command returns a non-zero exit status.
+If _`quiet`_ is `0`, output is always quoted.  Otherwise, output is quoted only if the command returns a non-zero exit status.
 
 ```
 function foo () {
