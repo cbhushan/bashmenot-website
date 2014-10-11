@@ -887,7 +887,7 @@ Parse an S3 bucket listing in XML format into a file of objects.
 ### `s3_do`
 > Arguments:  _`url`_
 
-S3-specific wrapper for [`curl_do`](#curl_do) with REST authentication.  Used by every function in this module.
+S3-specific wrapper for [`curl_do`](#curl_do), including [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).  Used by most functions in this module.
 
 All messages are logged to error output.
 
@@ -908,9 +908,9 @@ $ s3_download foo.halcyon.sh foo/bar bar
 ### `s3_list`
 > Arguments:  _`src_bucket src_prefix`_
 
-Output the contents of the specified S3 bucket with HTTP `GET`, listing the resources which start with the specified prefix.
+Output the contents of the specified S3 bucket, downloaded with HTTP `GET`, listing the resources which start with the specified prefix.
 
-An empty prefix can be specified to list the contents of bucket without any filtering.
+An empty prefix can be specified to list the contents of the entire bucket.
 
 Returns `1` on failure.
 
@@ -976,7 +976,7 @@ $ s3_create foo.halcyon.sh private
 ### `s3_copy`
 > Arguments:  _`src_bucket src_object dst_bucket dst_object dst_acl`_
 
-Copy the specified resource on S3 with HTTP `PUT` without downloading or uploading the resource data.
+Copy the specified resource on S3 with HTTP `PUT`, without downloading or uploading the resource data.
 
 The source and destination may be the same bucket or separate buckets.
 
