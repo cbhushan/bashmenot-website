@@ -856,7 +856,7 @@ Amazon S3 transfer module
 
 Requires _curl_ and OpenSSL.
 
-Functions to simplify Amazon S3 transfers, with user-friendly logging and failure handling.
+Functions to simplify HTTP transfers involving [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
 
 Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
