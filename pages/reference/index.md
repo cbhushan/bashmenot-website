@@ -692,7 +692,7 @@ foo/baz
 ### `measure_recursively`
 > Arguments:  _`dir`_
 
-Output a user-friendly measure of the total amount of data contained in the descendants of the specified directory.
+Output a user-friendly measure of the total amount of data contained in the descendants of the specified directory, in bytes, kilobytes, megabytes, etc.
 
 ```
 $ mkdir foo
