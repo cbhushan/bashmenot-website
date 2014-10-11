@@ -14,8 +14,8 @@ Programmer’s reference
 ======================
 
 
-Module usage
-------------
+Usage
+-----
 
 Sourcing the top-level _bashmenot_ module brings all functions into scope, without any side effects.
 
