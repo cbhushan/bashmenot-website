@@ -842,8 +842,8 @@ $ curl_delete httpbin.org/delete
 ```
 
 
-Amazon S3 transfer module
--------------------------
+Amazon S3 storage module
+------------------------
 
 > Source:
 > [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)\
@@ -856,7 +856,7 @@ Amazon S3 transfer module
 
 Requires _curl_ and OpenSSL.
 
-Functions to simplify HTTP transfers involving [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
+Functions to simplify remote storage using [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
 
 Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
@@ -1016,7 +1016,7 @@ Environment variables
 ### `HALCYON_AWS_ACCESS_KEY_ID`
 > Default value:  _none_
 
-Part of the authentication details used by the [Amazon S3 transfer module](#amazon-s3-transfer-module).
+Part of the authentication details used by the [Amazon S3 storage module](#amazon-s3-storage-module).
 
 
 ### `HALCYON_AWS_SECRET_ACCESS_KEY`
