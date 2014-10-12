@@ -17,6 +17,8 @@ Programmer’s reference
 Usage
 -----
 
+_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/).
+
 Sourcing the top-level _bashmenot_ module brings all functions into scope, without any side effects.
 
 ```
@@ -33,7 +35,7 @@ Logging module
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)\
 > Dependencies:  _none_
 
-Functions to simplify communication with the user.
+Basic functions to simplify communication with the user.
 
 
 ### `prefix_log`
@@ -173,7 +175,9 @@ Expectation control module
 > Dependencies:
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
 
-Functions for declaring and checking preconditions, postconditions, and invariants.  Design by contract, now in GNU _bash_.
+Functions for declaring and checking preconditions, postconditions, and invariants.
+
+Design by contract, now in [GNU _bash_](http://gnu.org/software/bash/).
 
 
 ### `expect_args`
@@ -270,7 +274,7 @@ OS detection module
 > Dependencies:
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
 
-Basic functions for attempting cross-platform compatibility.
+Basic functions for cross-platform compatibility.
 
 
 ### `echo_os_description`
@@ -315,7 +319,7 @@ Quoting module
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
 
-Additional functions to simplify communication with the user, including quiet mode support.
+Additional functions to simplify communication with the user.
 
 
 ### `sed_unbuffered`
@@ -373,7 +377,7 @@ Line processing module
 > Dependencies:
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 
-Basic functions for composable line-oriented processing of text data files.
+Basic functions for composable line-oriented text processing.
 
 
 ### `filter_last`
@@ -513,9 +517,8 @@ Sorting module
 > Source:
 > [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)\
 > Dependencies:
-> [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
-
-Requires GNU _sort_.
+> [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh),
+> [GNU _sort_](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -551,9 +554,8 @@ Date formatting module
 > Source:
 > [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)\
 > Dependencies:
-> [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh)
-
-Requires GNU _date_.
+> [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh),
+> [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -595,7 +597,7 @@ File system module
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
 
-Functions for communicating file system changes to the user, and related utilities.
+Functions to simplify communicating file system changes to the user.
 
 
 ### `find_added`
@@ -707,8 +709,8 @@ $ measure_recursively foo
 Process a file of paths separated by `NUL` bytes, removing symbols from each listed file.
 
 
-File archiving module
----------------------
+Archiving module
+----------------
 
 > Source:
 > [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)\
@@ -717,7 +719,7 @@ File archiving module
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
 
-Functions to simplify cross-platform archiving of files, with added safety.
+Functions to simplify cross-platform archiving of directories.
 
 
 ### `echo_tar_format_flag`
@@ -775,11 +777,10 @@ HTTP transfer module
 > [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)\
 > Dependencies:
 > [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
+> [_curl_](http://curl.haxx.se/)
 
-Requires _curl_.
-
-Functions to simplify HTTP transfers, with user-friendly logging and failure handling.
+Functions to simplify transferring files using HTTP, with user-friendly logging and failure handling.
 
 
 ### `curl_do`
@@ -852,13 +853,12 @@ Amazon S3 storage module
 > [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh),
 > [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh),
-> [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)
+> [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh),
+> [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html),
+> [_curl_](http://curl.haxx.se/),
+> [OpenSSL](https://www.openssl.org/)
 
-Requires _curl_ and OpenSSL.
-
-Functions to simplify remote storage using [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
-
-Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
+Functions to simplify storing files remotely using [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
 
 
 ### `echo_s3_host`
@@ -888,6 +888,8 @@ Parse an S3 bucket listing in XML format into a file of objects.
 > Arguments:  _`url`_
 
 S3-specific wrapper for [`curl_do`](#curl_do), including [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).  Used by most functions in this module.
+
+Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
 All messages are logged to error output.
 
