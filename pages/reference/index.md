@@ -327,6 +327,8 @@ Additional functions to simplify communication with the user.
 
 Portable _sed_ with minimal buffering.
 
+Any additional arguments are passed to _sed_ verbatim.
+
 
 ### `quote`
 > Arguments:  _none_
@@ -347,6 +349,8 @@ $ echo foo | quote
 Execute the specified command with its output quoted or omitted, depending on the value of _`quiet`_ and the exit status of the command.
 
 If _`quiet`_ is `0`, output is always quoted.  Otherwise, output is quoted only if the command returns a non-zero exit status.
+
+Any additional arguments are passed to the command verbatim.
 
 ```
 function foo () {
@@ -524,9 +528,11 @@ Cross-platform compatibility functions.
 
 
 ### `sort_naturally`
-> Arguments:  _none_
+> Arguments:  _`any*`_
 
 Portable version sort, also known as natural sorting order.
+
+Any additional arguments are passed to _sort_ verbatim.
 
 ```
 $ echo -e "foo-1\nfoo-12\nfoo-2" | sort_naturally
@@ -543,7 +549,7 @@ foo-2
 
 
 ### `sort0_naturally`
-> Arguments:  _none_
+> Arguments:  _`any*`_
 
 Like [`sort_naturally`](#sort_naturally), but with input separated by `NUL` bytes instead of newlines.
 
@@ -561,13 +567,15 @@ Cross-platform compatibility functions.
 
 
 ### `echo_date`
-> Arguments:  _`args*`_
+> Arguments:  _`any*`_
 
 Portable _date_.
 
+Any additional arguments are passed to _date_ verbatim.
+
 
 ### `echo_http_date`
-> Arguments:  _`args*`_
+> Arguments:  _`any*`_
 
 Output a UTC date and time in RFC 2822 format.
 
@@ -578,7 +586,7 @@ Fri, 26 Sep 2014 13:11:54 +0000
 
 
 ### `echo_timestamp`
-> Arguments:  _`args*`_
+> Arguments:  _`any*`_
 
 Output a UTC date and time in a compact format.
 
@@ -679,9 +687,11 @@ $ compare_recursively foo1 foo2
 
 
 ### `find_spaceless_recursively`
-> Arguments:  _`dir`_
+> Arguments:  _`dir any*`_
 
 Output all paths to files which are descendants of the specified directory, such that the paths contain no spaces.
+
+Any additional arguments are passed to _find_ verbatim.
 
 ```
 $ mkdir foo 'foo/foo bar'
@@ -704,9 +714,11 @@ $ measure_recursively foo
 
 
 ### `strip0`
-> Arguments:  _none_
+> Arguments:  _`any*`_
 
 Process a file of paths separated by `NUL` bytes, removing symbols from each listed file.
+
+Any additional arguments are passed to _strip_ verbatim.
 
 
 Archiving module
@@ -784,11 +796,11 @@ Functions to simplify transferring files using HTTP, with user-friendly logging 
 
 
 ### `curl_do`
-> Arguments:  _`url`_
+> Arguments:  _`url any*`_
 
 Wrapper for _curl_.  Used by every function in this module.
 
-All messages are logged to error output.
+All messages are logged to error output.  Any additional arguments are passed to _curl_ verbatim.
 
 
 ### `curl_download`
@@ -885,13 +897,13 @@ Parse an S3 bucket listing in XML format into a file of objects.
 
 
 ### `s3_do`
-> Arguments:  _`url`_
+> Arguments:  _`url any*`_
 
 S3-specific wrapper for [`curl_do`](#curl_do), including [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).  Used by most functions in this module.
 
 Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
-All messages are logged to error output.
+All messages are logged to error output.  Any additional arguments are passed to _curl_ verbatim.
 
 
 ### `s3_download`
