@@ -1,7 +1,5 @@
-_bashmenot-website_
-===================
-
-[_bashmenot_ website](http://bashmenot.mietek.io/).
+_[bashmenot](http://bashmenot.mietek.io/)-website_
+==================================================
 
 Built with [_cannot_](http://cannot.mietek.io/).
 
