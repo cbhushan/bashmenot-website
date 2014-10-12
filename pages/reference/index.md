@@ -900,8 +900,8 @@ Download the specified resource from S3 with HTTP `GET`.
 Does not overwrite existing files.  Creates the destination directory if needed.  Returns `1` on failure.
 
 ```
-$ s3_download foo.halcyon.sh foo/bar bar
-       Downloading s3://foo.halcyon.sh/foo/bar... done
+$ s3_download foo.example.com foo/bar bar
+       Downloading s3://foo.example.com/foo/bar... done
 ```
 
 
@@ -915,13 +915,13 @@ An empty prefix can be specified to list the contents of the entire bucket.
 Returns `1` on failure.
 
 ```
-$ s3_list foo.halcyon.sh foo
-       Listing s3://foo.halcyon.sh/?prefix=foo... done
+$ s3_list foo.example.com foo
+       Listing s3://foo.example.com/?prefix=foo... done
 foo/bar
 ```
 ```
-$ s3_list foo.halcyon.sh ''
-       Listing s3://foo.halcyon.sh/... done
+$ s3_list foo.example.com ''
+       Listing s3://foo.example.com/... done
 foo/bar
 bar/baz/foo
 baz
@@ -938,8 +938,8 @@ An empty source object can be specified to access the bucket itself.
 Returns `1` on failure.
 
 ```
-$ s3_check foo.halcyon.sh no-foo
-       Checking s3://foo.halcyon.sh/no-foo... 404
+$ s3_check foo.example.com no-foo
+       Checking s3://foo.example.com/no-foo... 404
 ```
 
 
@@ -953,8 +953,8 @@ The destination resource is assigned the specified [S3 <abbr title="Access contr
 **Overwrites** existing resources without warning.  Returns `1` on failure.
 
 ```
-$ s3_upload foo foo.halcyon.sh bar/foo private
-       Uploading s3://foo.halcyon.sh/bar/foo... done
+$ s3_upload foo foo.example.com bar/foo private
+       Uploading s3://foo.example.com/bar/foo... done
 ```
 
 
@@ -968,8 +968,8 @@ As with [`s3_upload`](#s3_upload), the destination is assigned the specified [S3
 Returns `1` on failure.
 
 ```
-$ s3_create foo.halcyon.sh private
-       Creating s3://foo.halcyon.sh/... done
+$ s3_create foo.example.com private
+       Creating s3://foo.example.com/... done
 ```
 
 
@@ -985,8 +985,8 @@ As with [`s3_upload`](#s3_upload), the destination is assigned the specified [S3
 Returns `1` on failure.
 
 ```
-$ s3_copy foo.halcyon.sh foo bar.halcyon.sh bar private
-       Copying s3://foo.halcyon.sh/foo to s3://bar.halcyon.sh/bar... done
+$ s3_copy foo.example.com foo bar.example.com bar private
+       Copying s3://foo.example.com/foo to s3://bar.example.com/bar... done
 ```
 
 
@@ -1000,12 +1000,12 @@ An empty destination object is used to delete the bucket itself.
 Returns `1` on failure.
 
 ```
-$ s3_delete foo.halcyon.sh foo/bar
-       Deleting s3://foo.halcyon.sh/foo/bar... done, 204
+$ s3_delete foo.example.com foo/bar
+       Deleting s3://foo.example.com/foo/bar... done, 204
 ```
 ```
-$ s3_delete foo.halcyon.sh ''
-       Deleting s3://foo.halcyon.sh/... done, 204
+$ s3_delete foo.example.com ''
+       Deleting s3://foo.example.com/... done, 204
 ```
 
 
