@@ -21,7 +21,7 @@ Usage
 
 _bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/).
 
-Please see the [programmer’s reference](reference/) for a detailed description of each available function, complete with usage examples.
+See the [programmer’s reference](reference/) for a detailed description of each available function, complete with usage examples.
 
 - [Logging module](reference/#logging-module)
 - [Expectation control module](reference/#expectation-control-module)
