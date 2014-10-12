@@ -19,12 +19,24 @@ Used in [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonhe
 Usage
 -----
 
+_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/).
+
 Please see the [programmer’s reference](reference/) for a detailed description of each available function, complete with usage examples.
+
+- [Logging module](reference/#logging-module)
+- [Expectation control module](reference/#expectation-control-module)
+- [OS detection module](reference/#os-detection-module)
+- [Quoting module](reference/#quoting-module)
+- [Line processing module](reference/#line-processing-module)
+- [Sorting module](reference/#sorting-module)
+- [Date formatting module](reference/#date-formatting-module)
+- [File system module](reference/#file-system-module)
+- [Archiving module](reference/#archiving-module)
+- [HTTP transfer module](reference/#http-transfer-module)
+- [Amazon S3 storage module](reference/#amazon-s3-storage-module)
 
 
 ### Installation
-
-Cloning the repository is sufficient.
 
 ```
 $ git clone https://github.com/mietek/bashmenot.git
@@ -39,11 +51,12 @@ $ bower install bashmenot
 
 ### Dependencies
 
-Requires [GNU _bash_](http://gnu.org/software/bash/) 4 or newer.
+_bashmenot_ requires [GNU _bash_](http://gnu.org/software/bash/) 4 or newer.
 
-Some functions require [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) and [GNU _sort_](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html), available as part of [GNU _coreutils_](https://www.gnu.org/software/coreutils/).
-
-HTTP transfer functions require [_curl_](http://curl.haxx.se/).  Amazon S3 transfer functions also require [OpenSSL](https://www.openssl.org/).
+- Date formatting requires [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html).
+- Sorting requires [GNU _sort_](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html).
+- HTTP transfer requires [_curl_](http://curl.haxx.se/).
+- Amazon S3 storage requires [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://www.openssl.org/).
 
 
 Support
