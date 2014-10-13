@@ -901,7 +901,7 @@ Parse an S3 bucket listing in XML format into a file of objects.
 
 S3-specific wrapper for [`curl_do`](#curl_do), including [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).  Used by most functions in this module.
 
-Authentication details are defined by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
+Access to S3 is controlled by the [`HALCYON_AWS_ACCESS_KEY_ID`](#halcyon_aws_access_key_id) and [`HALCYON_AWS_SECRET_ACCESS_KEY`](#halcyon_aws_secret_access_key) environment variables.
 
 All messages are logged to error output.  Any additional arguments are passed to _curl_ verbatim.
 

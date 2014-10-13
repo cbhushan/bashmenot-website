@@ -42,12 +42,6 @@ See the [programmer’s reference](reference/) for a detailed description of eac
 $ git clone https://github.com/mietek/bashmenot.git
 ```
 
-Also available as a [Bower](http://bower.io/) package.
-
-```
-$ bower install bashmenot
-```
-
 
 ### Dependencies
 
