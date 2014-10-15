@@ -795,6 +795,17 @@ HTTP transfer module
 Functions to simplify transferring files using HTTP, with user-friendly logging and failure handling.
 
 
+### `echo_http_code_description`
+> Arguments:  _`code`_
+
+Output a user-friendly description of the specified HTTP code.
+
+```
+$ echo_http_code_description 418
+418 I'm a teapot
+```
+
+
 ### `curl_do`
 > Arguments:  _`url any*`_
 
