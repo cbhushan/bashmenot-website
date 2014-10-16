@@ -26,3 +26,21 @@ footer nav.menu-bar h1.logotype a
 
 .index header nav.menu-bar h1.logotype a
   color: $accent-color
+
+
+#mietek a
+  @include button-link
+  @include smart-box-glow($accent-color)
+  display: block
+  float: left
+  margin-right: ln(1)
+  margin-bottom: ln(1)
+  border: 1px $object-color solid
+  border-radius: 50%
+  background-position: center center
+  transition: ease(border-color, 1, 0), ease(box-shadow, 1, 0)
+  @include frob-when-frobbed
+    border-color: $accent-color
+
+.hairline #mietek a
+  border-width: 0.5px

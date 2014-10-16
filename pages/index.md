@@ -4,7 +4,9 @@ page-class: index
 page-footer: |
   <script>
     addEventListener('load', function () {
-      document.getElementById('hello').href = cannot.rot13('znvygb:uryyb@yrnfgsvkrq.pbz');
+      [].forEach.call(document.getElementsByClassName('hello'), function (hello) {
+        hello.href = cannot.rot13('znvygb:uryyb@zvrgrx.vb');
+      });
     });
   </script>
 ---
@@ -53,23 +55,25 @@ _bashmenot_ requires [GNU _bash_](http://gnu.org/software/bash/) 4 or newer.
 - Amazon S3 storage requires [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://www.openssl.org/).
 
 
-Support
--------
+### Bugs
 
-Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).  There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
+Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).
 
-Commercial support for _bashmenot_ is offered by [Least Fixed](http://leastfixed.com/), a functional software consultancy.
-
-Need help?  Say <a href="" id="hello">hello</a>.
+There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
 
 
-Acknowledgments
----------------
+About
+-----
+
+<span id="mietek"><a class="hello" href=""></a></span>
+
+My name is [Miëtek Bak](http://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](http://mietek.io/projects/).
+
+This work is published under the [MIT X11 license](license/), and supported by my company, [Least Fixed](http://leastfixed.com/).
+
+How can I help you?  Would you like to work with me?  Say <a class="hello" href="">hello</a>.
+
+
+### Acknowledgments
 
 Thanks to [Kenneth Reitz](http://www.kennethreitz.org/) for building [_httpbin_](http://httpbin.org/).
-
-
-License
--------
-
-Made by [Miëtek Bak](http://mietek.io/).  Published under the [MIT X11 license](license/).
