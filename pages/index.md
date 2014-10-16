@@ -65,11 +65,11 @@ About
 
 <span id="mietek"><a class="hello" href=""></a></span>
 
-My name is [Miëtek Bak](http://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](http://mietek.io/projects/).
+My name is [Miëtek Bak](http://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](http://mietek.io/projects/).
 
-This work is published under the [MIT X11 license](license/), and supported by my company, [Least Fixed](http://leastfixed.com/).
+This work is published under the [MIT X11 license](license/), and supported by my company, [Least Fixed](http://leastfixed.com/).
 
-How can I help you?  Would you like to work with me?  Say <a class="hello" href="">hello</a>.
+Would you like to work with me?  Say <a class="hello" href="">hello</a>.
 
 
 ### Acknowledgments
