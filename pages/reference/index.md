@@ -522,7 +522,7 @@ Sorting module
 > [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)\
 > Dependencies:
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh),
-> [GNU _sort_](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
+> [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -561,7 +561,7 @@ Date formatting module
 > [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)\
 > Dependencies:
 > [`os.sh`](https://github.com/mietek/bashmenot/blob/master/src/os.sh),
-> [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+> [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -877,7 +877,7 @@ Amazon S3 storage module
 > [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh),
 > [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh),
 > [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh),
-> [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html),
+> [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html),
 > [_curl_](http://curl.haxx.se/),
 > [OpenSSL](https://www.openssl.org/)
 

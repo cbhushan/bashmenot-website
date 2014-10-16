@@ -49,10 +49,10 @@ $ git clone --depth=1 https://github.com/mietek/bashmenot.git
 
 _bashmenot_ requires [GNU _bash_](http://gnu.org/software/bash/) 4 or newer.
 
-- Date formatting requires [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html).
-- Sorting requires [GNU _sort_](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html).
+- Date formatting requires [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html).
+- Sorting requires [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html).
 - HTTP transfer requires [_curl_](http://curl.haxx.se/).
-- Amazon S3 storage requires [GNU _date_](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://www.openssl.org/).
+- Amazon S3 storage requires [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://www.openssl.org/).
 
 
 ### Bugs
