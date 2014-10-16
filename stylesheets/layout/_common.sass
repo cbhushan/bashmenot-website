@@ -38,9 +38,12 @@ footer nav.menu-bar h1.logotype a
   border: 1px $object-color solid
   border-radius: 50%
   background-position: center center
-  transition: ease(border-color, 1, 0), ease(box-shadow, 1, 0)
+  background-color: transparent
+  background-blend-mode: screen
+  transition: ease(border-color, 1, 0), ease(background-color, 1, 0), ease(box-shadow, 1, 0)
   @include frob-when-frobbed
     border-color: $accent-color
+    background-color: $accent-color
 
 .hairline #mietek a
   border-width: 0.5px
