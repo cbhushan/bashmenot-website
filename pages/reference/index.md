@@ -17,8 +17,6 @@ Programmer’s reference
 Usage
 -----
 
-_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/).
-
 Sourcing the top-level _bashmenot_ module brings all functions into scope, without any side effects.
 
 ```

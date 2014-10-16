@@ -12,16 +12,14 @@ page-footer: |
 ---
 
 
-Functions for safer shell scripting
-===================================
+_bashmenot_
+===========
 
-Used by [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonheroku.com/).
+_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/), used by [Halcyon](http://halcyon.sh/) and [_Haskell on Heroku_](http://haskellonheroku.com/).
 
 
 Usage
 -----
-
-_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/).
 
 See the [programmer’s reference](reference/) for a detailed description of each available function, complete with usage examples.
 
