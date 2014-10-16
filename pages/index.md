@@ -15,7 +15,7 @@ page-footer: |
 Functions for safer shell scripting
 ===================================
 
-Used in [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonheroku.com/).
+Used by [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonheroku.com/).
 
 
 Usage
@@ -41,7 +41,7 @@ See the [programmer’s reference](reference/) for a detailed description of eac
 ### Installation
 
 ```
-$ git clone https://github.com/mietek/bashmenot.git
+$ git clone --depth=1 https://github.com/mietek/bashmenot.git
 ```
 
 
