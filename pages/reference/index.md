@@ -283,7 +283,7 @@ Basic functions for cross-platform compatibility.
 Output a user-friendly description of the specified OS identifier.
 
 ```
-$ echo_os_description linux-ubuntu-14-04-x64
+$ echo_os_description linux-ubuntu-14.04-x86_64
 Ubuntu 14.04 LTS (64-bit)
 ```
 
@@ -295,7 +295,7 @@ Output the architecture part of the host OS identifier.
 
 ```
 $ detect_arch
-x64
+x86_64
 ```
 
 
@@ -306,7 +306,7 @@ Output the host OS identifier.
 
 ```
 $ detect_os
-linux-ubuntu-14-04-x64
+os-x-10.10-x86_64
 ```
 
 
@@ -836,7 +836,7 @@ Returns `1` on failure.
 
 ```
 $ curl_check httpbin.org/status/404
-       Checking httpbin.org/status/404... 404
+       Checking httpbin.org/status/404... 404 Not found
 ```
 
 
@@ -964,7 +964,7 @@ Returns `1` on failure.
 
 ```
 $ s3_check foo.example.com no-foo
-       Checking s3://foo.example.com/no-foo... 404
+       Checking s3://foo.example.com/no-foo... 404 Not found
 ```
 
 
@@ -1026,11 +1026,11 @@ Returns `1` on failure.
 
 ```
 $ s3_delete foo.example.com foo/bar
-       Deleting s3://foo.example.com/foo/bar... done, 204
+       Deleting s3://foo.example.com/foo/bar... 204 No content
 ```
 ```
 $ s3_delete foo.example.com ''
-       Deleting s3://foo.example.com/... done, 204
+       Deleting s3://foo.example.com/... 204 No content
 ```
 
 
