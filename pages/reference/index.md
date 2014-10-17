@@ -834,7 +834,7 @@ Returns `1` on failure.
 
 ```
 $ curl_check httpbin.org/status/404
-       Checking httpbin.org/status/404... 404 Not found
+       Checking httpbin.org/status/404... 404 (not found)
 ```
 
 
@@ -962,7 +962,7 @@ Returns `1` on failure.
 
 ```
 $ s3_check foo.example.com no-foo
-       Checking s3://foo.example.com/no-foo... 404 Not found
+       Checking s3://foo.example.com/no-foo... 404 (not found)
 ```
 
 
@@ -1024,11 +1024,11 @@ Returns `1` on failure.
 
 ```
 $ s3_delete foo.example.com foo/bar
-       Deleting s3://foo.example.com/foo/bar... 204 No content
+       Deleting s3://foo.example.com/foo/bar... 204 (no content)
 ```
 ```
 $ s3_delete foo.example.com ''
-       Deleting s3://foo.example.com/... 204 No content
+       Deleting s3://foo.example.com/... 204 (no content)
 ```
 
 
