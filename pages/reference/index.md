@@ -606,6 +606,28 @@ File system module
 Functions to simplify communicating file system changes to the user.
 
 
+### `echo_tmp_file_name`
+> Arguments:  _`base`_
+
+Output a path to a potentially unique file in the temporary directory.
+
+```
+$ echo_tmp_file_name foo
+/tmp/foo.Lzi6bRzLS0
+```
+
+
+### `echo_tmp_dir_name`
+> Arguments:  _`base`_
+
+Like [`echo_tmp_file_name`](#echo_tmp_file_name), but for directories.
+
+```
+$ echo_tmp_dir_name foo
+/tmp/foo.Gf9J615PeE
+```
+
+
 ### `find_added`
 > Arguments:  _`old_dir new_dir`_
 
