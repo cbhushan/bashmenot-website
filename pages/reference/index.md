@@ -628,6 +628,17 @@ $ echo_tmp_dir_name foo
 ```
 
 
+### `echo_file_modification_time`
+> Arguments:  _`file`_
+
+Output the modification time of the specified file, in seconds since the epoch.
+
+```
+$ echo_file_modification_time statfoo
+1413683051
+```
+
+
 ### `find_added`
 > Arguments:  _`old_dir new_dir`_
 
