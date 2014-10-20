@@ -347,36 +347,6 @@ $ echo foo | quote
 ```
 
 
-### `quote_quietly`
-> Arguments:  _`quiet cmd any*`_
-
-Execute the specified command with its output quoted or omitted, depending on the value of _`quiet`_ and the exit status of the command.
-
-If _`quiet`_ is `0`, output is always quoted.  Otherwise, output is quoted only if the command returns a non-zero exit status.
-
-Any additional arguments are passed to the command verbatim.
-
-```
-function foo () {
-  echo foo
-  return 0
-}
-$ quote_quietly 0 foo
-       foo
-$ quote_quietly 1 foo
-```
-```
-function bar () {
-  echo bar
-  return 1
-}
-$ quote_quietly 0 bar
-       bar
-$ quote_quietly 1 bar
-       bar
-```
-
-
 Line processing module
 ----------------------
 
