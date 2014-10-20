@@ -744,6 +744,18 @@ $ measure_recursively foo
 ```
 
 
+### `copy_entire_contents`
+> Arguments:  _`src_dir dst_dir`_
+
+TODO
+
+
+### `copy_dotless_contents`
+> Arguments:  _`src_dir dst_dir`_
+
+TODO
+
+
 ### `strip0`
 > Arguments:  _`any*`_
 
