@@ -615,6 +615,18 @@ $ echo_file_modification_time statfoo
 ```
 
 
+### `echo_dir_path`
+> Arguments:  _`dir`_
+
+TODO
+
+
+### `echo_dir_name`
+> Arguments:  _`dir`_
+
+TODO
+
+
 ### `find_added`
 > Arguments:  _`old_dir new_dir`_
 
