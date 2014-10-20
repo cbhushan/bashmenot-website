@@ -150,6 +150,12 @@ $ log_error foo
 ```
 
 
+### `log_delimiter`
+> Arguments:  _none_
+
+TODO
+
+
 ### `die`
 > Arguments:  _`any*`_
 
@@ -730,6 +736,18 @@ $ touch foo/baz 'foo/foo bar/baz'
 $ find_spaceless_recursively foo
 foo/baz
 ```
+
+
+### `do_hash`
+> Arguments:  _`file`_
+
+TODO
+
+
+### `hash_spaceless_recursively`
+> Arguments:  _`dir any*`_
+
+TODO
 
 
 ### `measure_recursively`
