@@ -34,25 +34,33 @@ Environment variables
 
 
 ### `BASHMENOT_AWS_ACCESS_KEY_ID`
-> Default value:  _none_
+
+> ---------------------|---
+> Default value:       | _none_
 
 Public part of the authentication details used by the [Amazon S3 storage module](#amazon-s3-storage-module).
 
 
 ### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
-> Default value:  _none_
+
+> ---------------------|---
+> Default value:       | _none_
 
 Private part of the authentication details used by the [Amazon S3 storage module](#amazon-s3-storage-module).
 
 
 ### `BASHMENOT_S3_HOST`
-> Default value:  `s3.amazonaws.com`
+
+> ---------------------|---
+> Default value:       | `s3.amazonaws.com`
 
 Host used by the [Amazon S3 storage module](#amazon-s3-storage-module).
 
 
 ### `BASHMENOT_URL`
-> Default value:  [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
+
+> ---------------------|---
+> Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
 
 Location of the _git_ repository used for automatic updates.
 
@@ -60,7 +68,9 @@ Defaults to the `master` branch.  To use another branch, append `#`_`branch`_ to
 
 
 ### `BASHMENOT_NO_AUTOUPDATE`
-> Default value:  `0`
+
+> ---------------------|---
+> Default value:       | `0`
 
 Disables automatic updates, when `1`.
 
@@ -68,15 +78,17 @@ Disables automatic updates, when `1`.
 Logging module
 --------------
 
-> Source:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)\
-> Dependencies:  _none_
+> ---------------------|---
+> Source:              | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
+> Dependencies:        | _none_
 
 Basic functions to simplify communication with the user.
 
 
 ### `prefix_log`
-> Arguments:  _`prefix any*`_
+
+> ---------------------|---
+> Arguments:           | _`prefix any*`_
 
 Logs arguments to error output, using the specified prefix.
 
@@ -89,7 +101,9 @@ foobar
 
 
 ### `prefix_log_begin`
-> Arguments:  _`prefix any*`_
+
+> ---------------------|---
+> Arguments:           | _`prefix any*`_
 
 Logs arguments to error output, using the specified prefix, and with a space instead of a newline at the end.
 
@@ -97,7 +111,9 @@ Never fails.
 
 
 ### `log`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by an arrow marker.
 
@@ -110,7 +126,9 @@ $ log fooing
 
 
 ### `log_begin`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by an arrow marker, and with a space instead of a newline at the end.
 
@@ -118,7 +136,9 @@ Never fails.
 
 
 ### `log_end`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, with no prefix.
 
@@ -135,7 +155,9 @@ $ foo
 
 
 ### `log_indent`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by whitespace.
 
@@ -148,7 +170,9 @@ $ log_indent baring
 
 
 ### `log_indent_begin`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by whitespace, and with a space instead of a newline at the end.
 
@@ -165,7 +189,9 @@ $ bar
 
 
 ### `log_label`
-> Arguments:  _`label`_ _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`label`_ _`any*`_
 
 Logs arguments to error output, prefixed by an arrow marker, and with padding between _`label`_ and the other arguments.
 
@@ -178,7 +204,9 @@ $ log_label foo: bar
 
 
 ### `log_indent_label`
-> Arguments:  _`label`_ _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`label`_ _`any*`_
 
 Logs arguments to error output, prefixed by whitespace, and with padding between _`label`_ and the other arguments.
 
@@ -191,7 +219,9 @@ $ log_indent_label foo: bar
 
 
 ### `log_debug`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by a debug marker.
 
@@ -204,7 +234,9 @@ $ log_debug foo
 
 
 ### `log_warning`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by a warning marker.
 
@@ -217,7 +249,9 @@ $ log_warning foo
 
 
 ### `log_error`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs arguments to error output, prefixed by an error marker.
 
@@ -230,7 +264,9 @@ $ log_error foo
 
 
 ### `die`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Logs an error and exits with `1` as the exit status.
 
@@ -247,16 +283,17 @@ $ foo
 Expectation control module
 --------------------------
 
-> Source:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)\
-> Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
+> ---------------------|---
+> Source:              | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
 
 Functions for declaring and checking preconditions, postconditions, and invariants.  Design-by-contract programming, now in [GNU _bash_](http://gnu.org/software/bash/).
 
 
 ### `expect_args`
-> Arguments:  _`var*`_ ` -- "$@"`
+
+> ---------------------|---
+> Arguments:           | _`var*`_ ` -- "$@"`
 
 First, checks the required number of arguments is available; dies otherwise.  Next, sets the specified variables to the values of the appropriate arguments.
 
@@ -274,7 +311,9 @@ $ foo
 
 
 ### `expect_vars`
-> Arguments:  _`var*`_
+
+> ---------------------|---
+> Arguments:           | _`var*`_
 
 Checks the specified variables are set and not empty; dies otherwise.
 
@@ -289,7 +328,9 @@ $ foo
 
 
 ### `expect_existing`
-> Arguments:  _`thing*`_
+
+> ---------------------|---
+> Arguments:           | _`thing*`_
 
 Checks the specified files or directories exist; dies otherwise.
 
@@ -304,7 +345,9 @@ $ foo
 
 
 ### `expect_no_existing`
-> Arguments:  _`thing*`_
+
+> ---------------------|---
+> Arguments:           | _`thing*`_
 
 Checks the specified files or directories do not exist; dies otherwise.
 
@@ -322,16 +365,17 @@ $ foo
 Platform detection module
 -------------------------
 
-> Source:
-> [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)\
-> Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> ---------------------|---
+> Source:              | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 
 Basic functions for cross-platform compatibility.
 
 
 ### `format_platform_description`
-> Arguments:  _`platform`_
+
+> ---------------------|---
+> Arguments:           | _`platform`_
 
 Outputs a user-friendly description of the specified platform identifier.
 
@@ -344,7 +388,9 @@ Ubuntu 14.04 LTS (64-bit)
 
 
 ### `detect_arch`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the architecture part of the host platform identifier, or nothing.
 
@@ -357,7 +403,9 @@ x86_64
 
 
 ### `detect_linux_label`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the OS label part of the host platform identifier, or nothing.
 
@@ -370,7 +418,9 @@ ubuntu
 
 
 ### `detect_linux_version`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the OS version part of the host platform identifier, or nothing.
 
@@ -383,7 +433,9 @@ $ detect_linux_version
 
 
 ### `detect_os`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the OS part of the host platform identifier.
 
@@ -396,7 +448,9 @@ linux-ubuntu-14.04
 
 
 ### `detect_platform`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the host platform identifier.
 
@@ -411,16 +465,17 @@ linux-ubuntu-14.04-x86_64
 Quoting module
 --------------
 
-> Source:
-> [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh)\
-> Dependencies:
-> [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)
+> ---------------------|---
+> Source:              | [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh)
+> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)
 
 Additional functions to simplify communication with the user.
 
 
 ### `quote`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Pipes input to error output, prefixed by whitespace.
 
@@ -435,16 +490,17 @@ $ echo foo | quote
 Line processing module
 ----------------------
 
-> Source:
-> [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)\
-> Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
+> ---------------------|---
+> Source:              | [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 
 Basic functions for composable line-oriented text processing.
 
 
 ### `filter_first`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the first line of input.
 
@@ -457,7 +513,9 @@ foo
 
 
 ### `filter_last`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs the last line of input.
 
@@ -470,7 +528,9 @@ baz
 
 
 ### `filter_not_last`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs all lines of input except the last.
 
@@ -484,7 +544,9 @@ bar
 
 
 ### `filter_matching`
-> Arguments:  _`regex`_
+
+> ---------------------|---
+> Arguments:           | _`regex`_
 
 Outputs all lines of input which match the specified regular expression.
 
@@ -497,7 +559,9 @@ bar
 
 
 ### `filter_not_matching`
-> Arguments:  _`regex`_
+
+> ---------------------|---
+> Arguments:           | _`regex`_
 
 Outputs all lines of input which do not match the specified regular expression.
 
@@ -511,7 +575,9 @@ baz
 
 
 ### `match_at_most_one`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs up to one line of input, if the input consists of up to one line.
 
@@ -531,7 +597,9 @@ $ echo -e "foo\nbar" | match_at_most_one ; echo $?
 
 
 ### `match_at_least_one`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Pipes input to output, if the input consists of one line or more.
 
@@ -553,7 +621,9 @@ bar
 
 
 ### `match_exactly_one`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs one line of input, if the input consists of only one line.
 
@@ -573,7 +643,9 @@ $ echo -e "foo\nbar" | match_exactly_one ; echo $?
 
 
 ### `strip_trailing_newline`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Pipes input to output, removing at most one trailing newline.
 
@@ -592,17 +664,17 @@ foo
 Sorting module
 --------------
 
-> Source:
-> [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)\
-> Dependencies:
-> [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh),
-> [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
+> ---------------------|---
+> Source:              | [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
+> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
 
 Cross-platform compatibility functions.
 
 
 ### `sort_natural`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Portable natural sort.
 
@@ -623,7 +695,9 @@ foo-2
 
 
 ### `sort0_natural`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Portable natural sort, for input separated by `NUL` bytes instead of newlines.
 
@@ -633,17 +707,17 @@ Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arg
 Date formatting module
 ----------------------
 
-> Source:
-> [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)\
-> Dependencies:
-> [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh),
-> [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+> ---------------------|---
+> Source:              | [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)
+> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
 Cross-platform compatibility functions.
 
 
 ### `get_http_date`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Outputs a UTC date and time in RFC 2822 format.
 
@@ -656,7 +730,9 @@ Fri, 05 Nov 2014 23:59:59 +0000
 
 
 ### `get_date`
-> Arguments:  _`any*`_
+
+> ---------------------|---
+> Arguments:           | _`any*`_
 
 Outputs a UTC date and time in ISO 8601 format.
 
@@ -671,18 +747,17 @@ $ get_date
 File system module
 ------------------
 
-> Source:
-> [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)\
-> Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh),
-> [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
+> ---------------------|---
+> Source:              | [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
 
 Functions to simplify working with the file system.
 
 
 ### `get_tmp_file`
-> Arguments:  _`base`_
+
+> ---------------------|---
+> Arguments:           | _`base`_
 
 Outputs an absolute path to a unique temporary file.
 
@@ -693,7 +768,9 @@ $ get_tmp_file foo
 
 
 ### `get_tmp_dir`
-> Arguments:  _`base`_
+
+> ---------------------|---
+> Arguments:           | _`base`_
 
 Outputs an absolute path to a unique temporary directory.
 
@@ -704,7 +781,9 @@ $ get_tmp_dir foo
 
 
 ### `get_size`
-> Arguments:  _`thing`_
+
+> ---------------------|---
+> Arguments:           | _`thing`_
 
 Outputs a user-friendly summary size of the data contained in the specified file or directory.
 
@@ -715,7 +794,9 @@ $ get_size /app
 
 
 ### `get_modification_time`
-> Arguments:  _`thing`_
+
+> ---------------------|---
+> Arguments:           | _`thing`_
 
 Outputs the modification time of the specified file or directory, in seconds since the Unix epoch.
 
@@ -729,7 +810,9 @@ $ get_modification_time foo
 
 
 ### `get_dir_path`
-> Arguments:  _`dir`_
+
+> ---------------------|---
+> Arguments:           | _`dir`_
 
 Outputs an absolute path to the specified directory, collapsing any symbolic links.
 
@@ -740,7 +823,9 @@ $ get_dir_path .
 
 
 ### `get_dir_name`
-> Arguments:  _`dir`_
+
+> ---------------------|---
+> Arguments:           | _`dir`_
 
 Outputs the name of the specified directory.
 
@@ -751,7 +836,9 @@ baz
 
 
 ### `find_added`
-> Arguments:  _`old_dir new_dir`_
+
+> ---------------------|---
+> Arguments:           | _`old_dir new_dir`_
 
 Outputs relative paths to files which do not exist in the old directory and exist in the new one, in natural order.
 
@@ -766,7 +853,9 @@ bar2
 
 
 ### `find_changed`
-> Arguments:  _`old_dir new_dir`_
+
+> ---------------------|---
+> Arguments:           | _`old_dir new_dir`_
 
 Outputs relative paths to files which differ between the two directories, in natural order.
 
@@ -782,7 +871,9 @@ bar
 
 
 ### `find_not_changed`
-> Arguments:  _`old_dir new_dir`_
+
+> ---------------------|---
+> Arguments:           | _`old_dir new_dir`_
 
 Outputs relative paths to files which do not differ between the two directories, in natural order.
 
@@ -798,7 +889,9 @@ baz
 
 
 ### `find_removed`
-> Arguments:  _`old_dir new_dir`_
+
+> ---------------------|---
+> Arguments:           | _`old_dir new_dir`_
 
 Outputs relative paths to files which exist in the old directory and do not exist in the new one, in natural order.
 
@@ -813,7 +906,9 @@ bar1
 
 
 ### `compare_tree`
-> Arguments:  _`old_dir new_dir`_
+
+> ---------------------|---
+> Arguments:           | _`old_dir new_dir`_
 
 Like [`find_added`](#find_added), [`find_changed`](#find_changed), [`find_not_changed`](#find_not_changed), and [`find_removed`](#find_removed) combined.
 
@@ -835,7 +930,9 @@ $ compare_tree foo1 foo2
 
 
 ### `find_tree`
-> Arguments:  _`dir any*`_
+
+> ---------------------|---
+> Arguments:           | _`dir any*`_
 
 Outputs relative paths to found files.
 
@@ -852,27 +949,28 @@ bar/baz
 Hashing module
 --------------
 
-> Source:
-> [`hash.sh`](https://github.com/mietek/bashmenot/blob/master/src/hash.sh)\
-> Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh),
-> [OpenSSL](https://www.openssl.org/)
+> ---------------------|---
+> Source:              | [`hash.sh`](https://github.com/mietek/bashmenot/blob/master/src/hash.sh)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh), [OpenSSL](https://www.openssl.org/)
 
 
 ### `hash_do`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Outputs a SHA1 digest of the input, if the input is not empty; nothing otherwise.
 
 ```
 $ echo foo | do_hash
 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15
-``` 
+```
 
 
 ### `hash_tree`
-> Arguments:  _`dir any*`_
+
+> ---------------------|---
+> Arguments:           | _`dir any*`_
 
 Outputs a summary SHA1 digest of the data contained in all files found in the specified directory, if any files are found; nothing otherwise.
 
@@ -889,13 +987,9 @@ df1d77216a4168ceb2112b2078ebc7d5fc6ac446
 Archiving module
 ----------------
 
-> Source:
-> [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)\
-> Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh),
-> [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
+> ---------------------|---
+> Source:              | [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh), [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
 
 Functions to simplify copying files and directories, creating and extracting archives, and more.
 
@@ -903,7 +997,9 @@ The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip
 
 
 ### `copy_file`
-> Arguments:  _`src_file dst_file`_
+
+> ---------------------|---
+> Arguments:           | _`src_file dst_file`_
 
 Copies the specified file over the destination file.
 
@@ -911,7 +1007,9 @@ Overwrites existing files.  Creates the destination directory if needed.
 
 
 ### `copy_dir_into`
-> Arguments:  _`src_dir dst_dir`_
+
+> ---------------------|---
+> Arguments:           | _`src_dir dst_dir`_
 
 Copies the contents of the specified directory into the destination directory.
 
@@ -919,7 +1017,9 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 
 
 ### `copy_dir_over`
-> Arguments:  _`src_dir dst_dir`_
+
+> ---------------------|---
+> Arguments:           | _`src_dir dst_dir`_
 
 Copies the contents of the specified directory over the destination directory.
 
@@ -927,7 +1027,9 @@ Removes the destination directory.  Creates the destination directory if needed.
 
 
 ### `create_archive`
-> Arguments:  _`src_dir dst_file`_
+
+> ---------------------|---
+> Arguments:           | _`src_dir dst_file`_
 
 Creates an archive of the contents of the specified directory.
 
@@ -935,7 +1037,9 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 
 
 ### `extract_archive_into`
-> Arguments:  _`src_file dst_dir`_
+
+> ---------------------|---
+> Arguments:           | _`src_file dst_dir`_
 
 Extracts the specified archive into the destination directory.
 
@@ -943,7 +1047,9 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 
 
 ### `extract_archive_over`
-> Arguments:  _`src_file dst_dir`_
+
+> ---------------------|---
+> Arguments:           | _`src_file dst_dir`_
 
 Extracts the specified archive over the destination directory.
 
@@ -951,7 +1057,9 @@ Removes the destination directory.  Creates the destination directory if needed.
 
 
 ### `strip_tree`
-> Arguments:  _`dir any*`_
+
+> ---------------------|---
+> Arguments:           | _`dir any*`_
 
 Strips object file symbols from all files found in the specified directory.
 
@@ -961,35 +1069,41 @@ Uses `strip --strip-unneeded` on Linux, `strip -u -r` on OS X, and does nothing 
 Version control module
 ----------------------
 
-> Source:
-> [`git.sh`](https://github.com/mietek/bashmenot/blob/master/src/git.sh)\
-> Dependencies:
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [_git_](http://git-scm.com/)
+> ---------------------|---
+> Source:              | [`git.sh`](https://github.com/mietek/bashmenot/blob/master/src/git.sh)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_git_](http://git-scm.com/)
 
 Wrappers for `git`.
 
 
 ### `hash_last_git_commit`
-> Arguments:  _`dir`_
+
+> ---------------------|---
+> Arguments:           | _`dir`_
 
 TODO
 
 
 ### `quiet_git_do`
-> Arguments:  _`cmd any*`_
+
+> ---------------------|---
+> Arguments:           | _`cmd any*`_
 
 TODO
 
 
 ### `git_clone_over`
-> Arguments:  _`url dir`_
+
+> ---------------------|---
+> Arguments:           | _`url dir`_
 
 TODO
 
 
 ### `git_update_into`
-> Arguments:  _`url dir`_
+
+> ---------------------|---
+> Arguments:           | _`url dir`_
 
 TODO
 
@@ -997,18 +1111,17 @@ TODO
 HTTP transfer module
 --------------------
 
-> Source:
-> [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)\
-> Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [_curl_](http://curl.haxx.se/)
+> ---------------------|---
+> Source:              | [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_curl_](http://curl.haxx.se/)
 
 Functions to simplify transferring files using HTTP, with user-friendly logging and failure handling.
 
 
 ### `format_http_code_description`
-> Arguments:  _`code`_
+
+> ---------------------|---
+> Arguments:           | _`code`_
 
 Outputs a user-friendly description of the specified HTTP code.
 
@@ -1021,7 +1134,9 @@ $ format_http_code_description 418
 
 
 ### `curl_do`
-> Arguments:  _`url any*`_
+
+> ---------------------|---
+> Arguments:           | _`url any*`_
 
 Wrapper for `curl`.
 
@@ -1029,7 +1144,9 @@ Used by every function in this module.   Passes any additional arguments to the 
 
 
 ### `curl_download`
-> Arguments:  _`src_file_url dst_file`_
+
+> ---------------------|---
+> Arguments:           | _`src_file_url dst_file`_
 
 Downloads the specified resource with HTTP `GET`.
 
@@ -1042,7 +1159,9 @@ $ curl_download httpbin.org/get foo
 
 
 ### `curl_check`
-> Arguments:  _`src_url`_
+
+> ---------------------|---
+> Arguments:           | _`src_url`_
 
 Accesses the specified resource with HTTP `HEAD`.
 
@@ -1053,7 +1172,9 @@ $ curl_check httpbin.org/status/404
 
 
 ### `curl_upload`
-> Arguments:  _`src_file dst_file_url`_
+
+> ---------------------|---
+> Arguments:           | _`src_file dst_file_url`_
 
 Uploads the specified file with HTTP `PUT`.
 
@@ -1066,7 +1187,9 @@ $ curl_upload foo httpbin.org/put
 
 
 ### `curl_delete`
-> Arguments:  _`dst_url`_
+
+> ---------------------|---
+> Arguments:           | _`dst_url`_
 
 Deletes the specified resource with HTTP `DELETE`.
 
@@ -1079,23 +1202,17 @@ $ curl_delete httpbin.org/delete
 Amazon S3 storage module
 ------------------------
 
-> Source:
-> [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)\
-> Dependencies:
-> [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh),
-> [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh),
-> [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh),
-> [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh),
-> [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh),
-> [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html),
-> [_curl_](http://curl.haxx.se/),
-> [OpenSSL](https://www.openssl.org/)
+> ---------------------|---
+> Source:              | [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://www.openssl.org/)
 
 Functions to simplify storing files remotely using [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
 
 
 ### `format_s3_url`
-> Arguments:  _`resource`_
+
+> ---------------------|---
+> Arguments:           | _`resource`_
 
 Outputs the S3 URL of the specified resource.
 
@@ -1108,13 +1225,17 @@ https://s3.amazonaws.com/foo/bar
 
 
 ### `read_s3_listing_xml`
-> Arguments:  _none_
+
+> ---------------------|---
+> Arguments:           | _none_
 
 Parses an S3 bucket listing in XML format into a file of objects.
 
 
 ### `s3_do`
-> Arguments:  _`url any*`_
+
+> ---------------------|---
+> Arguments:           | _`url any*`_
 
 S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
@@ -1122,7 +1243,9 @@ Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID
 
 
 ### `s3_download`
-> Arguments:  _`src_bucket src_object dst_file`_
+
+> ---------------------|---
+> Arguments:           | _`src_bucket src_object dst_file`_
 
 Downloads the specified resource from S3 with HTTP `GET`.
 
@@ -1135,7 +1258,9 @@ $ s3_download foo.example.com foo/bar bar
 
 
 ### `s3_check`
-> Arguments:  _`src_bucket src_object`_
+
+> ---------------------|---
+> Arguments:           | _`src_bucket src_object`_
 
 Accesses the specified S3 resource with HTTP `HEAD`.
 
@@ -1148,7 +1273,9 @@ $ s3_check foo.example.com no-foo
 
 
 ### `s3_upload`
-> Arguments:  _`src_file dst_bucket dst_object dst_acl`_
+
+> ---------------------|---
+> Arguments:           | _`src_file dst_bucket dst_object dst_acl`_
 
 Uploads the specified file to S3 with HTTP `PUT`.
 
@@ -1161,7 +1288,9 @@ $ s3_upload foo foo.example.com bar/foo private
 
 
 ### `s3_create`
-> Arguments:  _`dst_bucket dst_acl`_
+
+> ---------------------|---
+> Arguments:           | _`dst_bucket dst_acl`_
 
 Creates an S3 bucket with HTTP `PUT`.
 
@@ -1174,7 +1303,9 @@ $ s3_create foo.example.com private
 
 
 ### `s3_copy`
-> Arguments:  _`src_bucket src_object dst_bucket dst_object dst_acl`_
+
+> ---------------------|---
+> Arguments:           | _`src_bucket src_object dst_bucket dst_object dst_acl`_
 
 Copies the specified resource on S3 with HTTP `PUT`, without downloading or uploading the resource data.
 
@@ -1187,7 +1318,9 @@ $ s3_copy foo.example.com foo bar.example.com bar private
 
 
 ### `s3_delete`
-> Arguments:  _`dst_bucket dst_object`_
+
+> ---------------------|---
+> Arguments:           | _`dst_bucket dst_object`_
 
 Deletes the specified resource from S3 with HTTP `DELETE`.
 
@@ -1204,7 +1337,9 @@ $ s3_delete foo.example.com ''
 
 
 ### `s3_list`
-> Arguments:  _`src_bucket src_prefix`_
+
+> ---------------------|---
+> Arguments:           | _`src_bucket src_prefix`_
 
 Outputs the contents of the specified S3 bucket, downloaded with HTTP `GET`, listing the resources which start with the specified prefix.
 
@@ -1225,6 +1360,8 @@ baz
 
 
 ### `curl_list_s3`
-> Arguments:  _`url`_
+
+> ---------------------|---
+> Arguments:           | _`url`_
 
 TODO
