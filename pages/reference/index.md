@@ -837,6 +837,23 @@ baz
 ```
 
 
+### `find_tree`
+
+> ---------------------|---
+> Arguments:           | _`dir any*`_
+
+Outputs relative paths to found files.
+
+Uses `find`, passing any additional arguments to the tool.  Never fails.
+
+```
+$ mkdir foo foo/bar
+$ touch foo/bar/baz
+$ find_tree foo
+bar/baz
+```
+
+
 ### `find_added`
 
 > ---------------------|---
@@ -928,23 +945,6 @@ $ compare_tree foo1 foo2
 + bar2
 * bar
 = baz
-```
-
-
-### `find_tree`
-
-> ---------------------|---
-> Arguments:           | _`dir any*`_
-
-Outputs relative paths to found files.
-
-Uses `find`, passing any additional arguments to the tool.  Never fails.
-
-```
-$ mkdir foo foo/bar
-$ touch foo/bar/baz
-$ find_tree foo
-bar/baz
 ```
 
 
@@ -1234,6 +1234,14 @@ https://s3.amazonaws.com/foo/bar
 Parses an S3 bucket listing in XML format into a file of objects.
 
 
+### `curl_list_s3`
+
+> ---------------------|---
+> Arguments:           | _`url`_
+
+TODO
+
+
 ### `s3_do`
 
 > ---------------------|---
@@ -1359,11 +1367,3 @@ foo/bar
 bar/baz/foo
 baz
 ```
-
-
-### `curl_list_s3`
-
-> ---------------------|---
-> Arguments:           | _`url`_
-
-TODO
