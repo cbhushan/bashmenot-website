@@ -29,42 +29,17 @@ To disable automatic updates, set [`BASHMENOT_NO_AUTOUPDATE`](#bashmenot_no_auto
 Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced as well.
 
 
-Environment variables
----------------------
-
-
-### `BASHMENOT_AWS_ACCESS_KEY_ID`
-
-> ---------------------|---
-> Default value:       | _none_
-
-Public part of the authentication details used by the [Amazon S3 storage module](#amazon-s3-storage-module).
-
-
-### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
-
-> ---------------------|---
-> Default value:       | _none_
-
-Private part of the authentication details used by the [Amazon S3 storage module](#amazon-s3-storage-module).
-
-
-### `BASHMENOT_S3_HOST`
-
-> ---------------------|---
-> Default value:       | `s3.amazonaws.com`
-
-Host used by the [Amazon S3 storage module](#amazon-s3-storage-module).
-
+Automatic update options
+------------------------
 
 ### `BASHMENOT_URL`
 
 > ---------------------|---
 > Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
 
-Location of the _git_ repository used for automatic updates.
+_git_ repository used for automatic updates.
 
-Defaults to the `master` branch.  To use another branch, append `#`_`branch`_ to the URL.
+Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
 
 
 ### `BASHMENOT_NO_AUTOUPDATE`
@@ -72,7 +47,34 @@ Defaults to the `master` branch.  To use another branch, append `#`_`branch`_ to
 > ---------------------|---
 > Default value:       | `0`
 
-Disables automatic updates, when `1`.
+Disables automatic updates.
+
+
+Amazon S3 storage options
+-------------------------
+
+### `BASHMENOT_AWS_ACCESS_KEY_ID`
+
+> ---------------------|---
+> Default value:       | _none_
+
+Identifier used to authenticate S3 requests.
+
+
+### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
+
+> ---------------------|---
+> Default value:       | _none_
+
+Secret used to authenticate S3 requests.
+
+
+### `BASHMENOT_S3_HOST`
+
+> ---------------------|---
+> Default value:       | `s3.amazonaws.com`
+
+S3 server address.
 
 
 Logging module
