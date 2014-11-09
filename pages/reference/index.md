@@ -17,7 +17,7 @@ Programmer’s reference
 Usage
 -----
 
-Sourcing the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file brings all functions into scope, automatically updating _bashmenot_ to the latest version available at [`BASHMENOT_URL`](#bashmenot_url).
+Sourcing the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file brings all functions into scope, automatically updating _bashmenot_ to the newest version available at [`BASHMENOT_URL`](#bashmenot_url).
 
 ```
 $ source bashmenot/src.sh
@@ -1078,7 +1078,7 @@ Version control module
 Wrappers for `git`.
 
 
-### `hash_last_git_commit`
+### `hash_newest_git_commit`
 
 > ---------------------|---
 > Arguments:           | _`dir`_
