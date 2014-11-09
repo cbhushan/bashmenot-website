@@ -13,11 +13,13 @@ page-head: |
 Programmer’s reference
 ======================
 
+_Work in progress._
+
 
 Usage
 -----
 
-Sourcing the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file brings all functions into scope, automatically updating _bashmenot_ to the newest version available at [`BASHMENOT_URL`](#bashmenot_url).
+Sourcing the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file brings all functions into scope, automatically updating _bashmenot_ to the newest version available.
 
 ```
 $ source bashmenot/src.sh
