@@ -1,6 +1,6 @@
 ---
 title: Functions for safer shell scripting
-page-class: index
+page-class: index tweak-listings
 page-footer: |
   <script>
     addEventListener('load', function () {
