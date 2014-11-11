@@ -1088,6 +1088,14 @@ Wrappers for `git`.
 TODO
 
 
+### `validate_git_url`
+
+> ---------------------|---
+> Arguments:           | _`url`_
+
+TODO
+
+
 ### `quiet_git_do`
 
 > ---------------------|---
