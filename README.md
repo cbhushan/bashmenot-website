@@ -1,10 +1,10 @@
-_[bashmenot](http://bashmenot.mietek.io/)-website_
-==================================================
+_[bashmenot](https://bashmenot.mietek.io/)-website_
+===================================================
 
-Built with [_cannot_](http://cannot.mietek.io/).
+Built with [_cannot_](https://cannot.mietek.io/).
 
 
 About
 -----
 
-Made by [Miëtek Bak](http://mietek.io/).  Published under the [MIT X11 license](http://bashmenot.mietek.io/license/).
+Made by [Miëtek Bak](https://mietek.io/).  Published under the [MIT X11 license](https://bashmenot.mietek.io/license/).

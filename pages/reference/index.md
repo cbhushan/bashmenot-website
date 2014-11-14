@@ -291,7 +291,7 @@ Expectation control module
 > Source:              | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 > Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
 
-Functions for declaring and checking preconditions, postconditions, and invariants.  Design-by-contract programming, now in [GNU _bash_](http://gnu.org/software/bash/).
+Functions for declaring and checking preconditions, postconditions, and invariants.  Design-by-contract programming, now in [GNU _bash_](https://gnu.org/software/bash/).
 
 
 ### `expect_args`
@@ -670,7 +670,7 @@ Sorting module
 
 > ---------------------|---
 > Source:              | [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
-> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
+> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _sort_](https://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -713,7 +713,7 @@ Date formatting module
 
 > ---------------------|---
 > Source:              | [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)
-> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+> Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
 Cross-platform compatibility functions.
 
@@ -955,7 +955,7 @@ Hashing module
 
 > ---------------------|---
 > Source:              | [`hash.sh`](https://github.com/mietek/bashmenot/blob/master/src/hash.sh)
-> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh), [OpenSSL](https://www.openssl.org/)
+> Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh), [OpenSSL](https://openssl.org/)
 
 
 ### `hash_do`
@@ -1216,9 +1216,9 @@ Amazon S3 storage module
 
 > ---------------------|---
 > Source:              | [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)
-> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://www.openssl.org/)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://openssl.org/)
 
-Functions to simplify storing files remotely using [Amazon S3 buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
+Functions to simplify storing files remotely using [Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
 
 
 ### `format_s3_url`
@@ -1257,7 +1257,7 @@ TODO
 > ---------------------|---
 > Arguments:           | _`url any*`_
 
-S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
+S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
 Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](#bashmenot_aws_secret_access_key).  Uses `curl`, passing any additional arguments to the tool.
 
@@ -1299,7 +1299,7 @@ $ s3_check foo.example.com no-foo
 
 Uploads the specified file to S3 with HTTP `PUT`.
 
-Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).  Commonly used values are `private` and `public-read`.
+Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).  Commonly used values are `private` and `public-read`.
 
 ```
 $ s3_upload foo foo.example.com bar/foo private
@@ -1314,7 +1314,7 @@ $ s3_upload foo foo.example.com bar/foo private
 
 Creates an S3 bucket with HTTP `PUT`.
 
-The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
 $ s3_create foo.example.com private
@@ -1329,7 +1329,7 @@ $ s3_create foo.example.com private
 
 Copies the specified resource on S3 with HTTP `PUT`, without downloading or uploading the resource data.
 
-The source and destination may be the same bucket or separate buckets.  The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+The source and destination may be the same bucket or separate buckets.  The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
 $ s3_copy foo.example.com foo bar.example.com bar private

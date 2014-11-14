@@ -15,7 +15,7 @@ page-footer: |
 _bashmenot_
 ===========
 
-_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](http://gnu.org/software/bash/), used by [Halcyon](http://halcyon.sh/) and [Haskell on Heroku](http://haskellonheroku.com/).
+_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](https://gnu.org/software/bash/), used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
 
 
 Usage
@@ -32,12 +32,12 @@ See the [programmer’s reference](reference/) for a description of available fu
 
 ### Dependencies
 
-_bashmenot_ requires [GNU _bash_](http://gnu.org/software/bash/) 4 or newer, and:
+_bashmenot_ requires [GNU _bash_](https://gnu.org/software/bash/) 4 or newer, and:
 
-- [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html) for date formatting.
-- [GNU _sort_](http://gnu.org/software/coreutils/manual/html_node/sort-invocation.html) for sorting.
+- [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html) for date formatting.
+- [GNU _sort_](https://gnu.org/software/coreutils/manual/html_node/sort-invocation.html) for sorting.
 - [_curl_](http://curl.haxx.se/) for HTTP transfer.
-- [GNU _date_](http://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://www.openssl.org/) for Amazon S3 storage.
+- [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), and [OpenSSL](https://openssl.org/) for Amazon S3 storage.
 - [_git_](http://git-scm.com/) for automatic updates.
 
 
@@ -53,15 +53,15 @@ About
 
 <span id="mietek"><a class="hello" href=""></a></span>
 
-My name is [Miëtek Bak](http://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](http://mietek.io/projects/).
+My name is [Miëtek Bak](https://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](https://mietek.io/projects/).
 
-This work is published under the [MIT X11 license](license/), and supported by my company, [Least Fixed](http://leastfixed.com/).
+This work is published under the [MIT X11 license](license/), and supported by my company, [Least Fixed](https://leastfixed.com/).
 
-Like my work?  I am available for consulting on software projects.  Say <a class="hello" href="">hello</a>, or follow <a href="http://twitter.com/mietek">@mietek</a>.
+Like my work?  I am available for consulting on software projects.  Say <a class="hello" href="">hello</a>, or follow <a href="https://twitter.com/mietek">@mietek</a>.
 
 
 ### Acknowledgments
 
-Thanks to [Kenneth Reitz](http://www.kennethreitz.org/) for building [_httpbin_](http://httpbin.org/).
+Thanks to [Kenneth Reitz](http://kennethreitz.org/) for building [_httpbin_](https://httpbin.org/).
 
-The monospaced font used in this website is [PragmataPro](http://www.fsd.it/fonts/pragmatapro.htm), by [Fabrizio Schiavi](http://www.fsd.it/).  The sans-serif font is [Concourse](http://practicaltypography.com/concourse.html), by [Matthew Butterick](http://practicaltypography.com/).
+The monospaced font used in this website is [PragmataPro](http://fsd.it/fonts/pragmatapro.htm), by [Fabrizio Schiavi](http://fsd.it/).  The sans-serif font is [Concourse](http://practicaltypography.com/concourse.html), by [Matthew Butterick](http://practicaltypography.com/).
