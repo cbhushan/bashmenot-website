@@ -41,7 +41,7 @@ _bashmenot_ requires [GNU _bash_](https://gnu.org/software/bash/) 4 or newer, an
 - [_git_](http://git-scm.com/) for automatic updates.
 
 
-### Bugs
+### Support
 
 Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).
 
