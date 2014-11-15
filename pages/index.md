@@ -15,7 +15,7 @@ page-footer: |
 _bashmenot_
 ===========
 
-_bashmenot_ is a library of functions for safer shell scripting in [GNU _bash_](https://gnu.org/software/bash/), used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
+_bashmenot_ is a library of [GNU _bash_](https://gnu.org/software/bash/) functions.
 
 
 Usage
@@ -27,7 +27,18 @@ $ source bashmenot/src.sh
 -----> Auto-updating bashmenot... done, fa1afe1
 ```
 
-See the [programmer’s reference](reference/) for a description of available functions, including examples.
+
+### Examples
+
+> Live                                              | GitHub
+> --------------------------------------------------|---------
+> [Halcyon](https://halcyon.sh/)                    | [_halcyon_](https://github.com/mietek/halcyon/)
+> [Haskell on Heroku](https://haskellonheroku.com/) | [_haskell-on-heroku_](https://github.com/mietek/haskell-on-heroku/)
+
+
+### Documentation
+
+All available functions are listed in the [programmer’s reference](reference/).
 
 
 ### Dependencies
@@ -43,9 +54,7 @@ _bashmenot_ requires [GNU _bash_](https://gnu.org/software/bash/) 4 or newer, an
 
 ### Support
 
-Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).
-
-There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
+Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).  There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
 
 
 About
