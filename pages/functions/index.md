@@ -1,82 +1,17 @@
 ---
-title: Programmer’s reference
+title: Function reference
 page-class: add-section-toc tweak-listings
 page-head: |
   <style>
-    header a.link-reference {
+    header a.link-functions {
       color: #f0690f;
     }
   </style>
 ---
 
 
-Programmer’s reference
-======================
-
-_Work in progress._
-
-
-Usage
------
-
-Sourcing the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file brings all functions into scope, automatically updating _bashmenot_ to the newest version available.
-
-```
-$ source bashmenot/src.sh
------> Auto-updating bashmenot... done, fa1afe1
-```
-
-To disable automatic updates, set [`BASHMENOT_NO_AUTOUPDATE`](#bashmenot_no_autoupdate) to `1`.
-
-Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced as well.
-
-
-Automatic update options
-------------------------
-
-### `BASHMENOT_URL`
-
-> ---------------------|---
-> Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
-
-_git_ repository used for automatic updates.
-
-Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
-
-
-### `BASHMENOT_NO_AUTOUPDATE`
-
-> ---------------------|---
-> Default value:       | `0`
-
-Disables automatic updates.
-
-
-Amazon S3 storage options
--------------------------
-
-### `BASHMENOT_AWS_ACCESS_KEY_ID`
-
-> ---------------------|---
-> Default value:       | _none_
-
-Identifier used to authenticate S3 requests.
-
-
-### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
-
-> ---------------------|---
-> Default value:       | _none_
-
-Secret used to authenticate S3 requests.
-
-
-### `BASHMENOT_S3_HOST`
-
-> ---------------------|---
-> Default value:       | `s3.amazonaws.com`
-
-S3 server address.
+Function reference
+==================
 
 
 Logging module
@@ -94,9 +29,7 @@ Basic functions to simplify communication with the user.
 > ---------------------|---
 > Arguments:           | _`prefix any*`_
 
-Logs arguments to error output, using the specified prefix.
-
-Never fails.
+Logs arguments to error output with the specified prefix. Never fails.
 
 ```
 $ prefix_log foo bar
@@ -109,9 +42,7 @@ foobar
 > ---------------------|---
 > Arguments:           | _`prefix any*`_
 
-Logs arguments to error output, using the specified prefix, and with a space instead of a newline at the end.
-
-Never fails.
+Logs arguments to error output with the specified prefix, and with a space instead of a newline at the end.  Never fails.
 
 
 ### `log`
@@ -119,9 +50,7 @@ Never fails.
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by an arrow marker.
-
-Never fails.
+Logs arguments to error output, prefixed by an arrow marker.  Never fails.
 
 ```
 $ log fooing
@@ -134,9 +63,7 @@ $ log fooing
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by an arrow marker, and with a space instead of a newline at the end.
-
-Never fails.
+Logs arguments to error output, prefixed by an arrow marker, and with a space instead of a newline at the end.  Never fails.
 
 
 ### `log_end`
@@ -144,9 +71,9 @@ Never fails.
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, with no prefix.
+Logs arguments to error output, with no prefix.  Never fails.
 
-To be paired with [`log_begin`](#log_begin).  Never fails.
+To be paired with [`log_begin`](#log_begin).
 
 ```
 function foo () {
@@ -163,9 +90,9 @@ $ foo
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by whitespace.
+Logs arguments to error output, prefixed by whitespace.  Never fails.
 
-For less important messages than [`log`](#log).  Never fails.
+For less important messages than [`log`](#log).
 
 ```
 $ log_indent baring
@@ -178,9 +105,9 @@ $ log_indent baring
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by whitespace, and with a space instead of a newline at the end.
+Logs arguments to error output, prefixed by whitespace, and with a space instead of a newline at the end.  Never fails.
 
-To be paired with [`log_end`](#log_end).  For less important messages than [`log_begin`](#log_begin).  Never fails.
+To be paired with [`log_end`](#log_end).  For less important messages than [`log_begin`](#log_begin).
 
 ```
 function bar () {
@@ -197,9 +124,7 @@ $ bar
 > ---------------------|---
 > Arguments:           | _`label`_ _`any*`_
 
-Logs arguments to error output, prefixed by an arrow marker, and with padding between _`label`_ and the other arguments.
-
-Never fails.
+Logs arguments to error output, prefixed by an arrow marker, and with padding between _`label`_ and the other arguments.  Never fails.
 
 ```
 $ log_label foo: bar
@@ -212,9 +137,9 @@ $ log_label foo: bar
 > ---------------------|---
 > Arguments:           | _`label`_ _`any*`_
 
-Logs arguments to error output, prefixed by whitespace, and with padding between _`label`_ and the other arguments.
+Logs arguments to error output, prefixed by whitespace, and with padding between _`label`_ and the other arguments.  Never fails.
 
-For less important messages than [`log_label`](#log_label).  Never fails.
+For less important messages than [`log_label`](#log_label).
 
 ```
 $ log_indent_label foo: bar
@@ -227,9 +152,7 @@ $ log_indent_label foo: bar
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by a debug marker.
-
-Never fails.
+Logs arguments to error output, prefixed by a debug marker.  Never fails.
 
 ```
 $ log_debug foo
@@ -242,9 +165,7 @@ $ log_debug foo
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by a warning marker.
-
-Never fails.
+Logs arguments to error output, prefixed by a warning marker.  Never fails.
 
 ```
 $ log_warning foo
@@ -257,9 +178,7 @@ $ log_warning foo
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Logs arguments to error output, prefixed by an error marker.
-
-Never fails.
+Logs arguments to error output, prefixed by an error marker.  Never fails.
 
 ```
 $ log_error foo
@@ -297,7 +216,7 @@ Functions for declaring and checking preconditions, postconditions, and invarian
 ### `expect_args`
 
 > ---------------------|---
-> Arguments:           | _`var*`_ ` -- "$@"`
+> Arguments:           | _`var*`_` -- "$@"`
 
 First, checks the required number of arguments is available; dies otherwise.  Next, sets the specified variables to the values of the appropriate arguments.
 
@@ -381,9 +300,7 @@ Basic functions for cross-platform compatibility.
 > ---------------------|---
 > Arguments:           | _`platform`_
 
-Outputs a user-friendly description of the specified platform identifier.
-
-Never fails.
+Outputs a user-friendly description of the specified platform identifier.  Never fails.
 
 ```
 $ format_platform_description linux-ubuntu-14.04-x86_64
@@ -396,9 +313,7 @@ Ubuntu 14.04 LTS (64-bit)
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the architecture part of the host platform identifier, or nothing.
-
-Never fails.
+Outputs the architecture part of the host platform identifier, or nothing.  Never fails.
 
 ```
 $ detect_arch
@@ -411,9 +326,7 @@ x86_64
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the OS label part of the host platform identifier, or nothing.
-
-Never fails.
+Outputs the OS label part of the host platform identifier, or nothing.  Never fails.
 
 ```
 $ detect_linux_label
@@ -426,9 +339,7 @@ ubuntu
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the OS version part of the host platform identifier, or nothing.
-
-Never fails.
+Outputs the OS version part of the host platform identifier, or nothing.  Never fails.
 
 ```
 $ detect_linux_version
@@ -441,9 +352,7 @@ $ detect_linux_version
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the OS part of the host platform identifier.
-
-Never fails.
+Outputs the OS part of the host platform identifier.  Never fails.
 
 ```
 $ detect_os
@@ -456,9 +365,7 @@ linux-ubuntu-14.04
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the host platform identifier.
-
-Never fails.
+Outputs the host platform identifier.  Never fails.
 
 ```
 $ detect_platform
@@ -481,9 +388,7 @@ Additional functions to simplify communication with the user.
 > ---------------------|---
 > Arguments:           | _none_
 
-Pipes input to error output, prefixed by whitespace.
-
-Never fails.
+Pipes input to error output, prefixed by whitespace.  Never fails.
 
 ```
 $ echo foo | quote
@@ -506,9 +411,7 @@ Basic functions for composable line-oriented text processing.
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the first line of input.
-
-Never fails.
+Outputs the first line of input.  Never fails.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_first
@@ -521,9 +424,7 @@ foo
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs the last line of input.
-
-Never fails.
+Outputs the last line of input.  Never fails.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_last
@@ -536,9 +437,7 @@ baz
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs all lines of input except the last.
-
-Never fails.
+Outputs all lines of input except the last.  Never fails.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_not_last
@@ -552,9 +451,9 @@ bar
 > ---------------------|---
 > Arguments:           | _`regex`_
 
-Outputs all lines of input which match the specified regular expression.
+Outputs all lines of input which match the specified regular expression.  Never fails, unless _`regex`_ is missing.
 
-Uses `awk`.  Never fails, unless _`regex`_ is missing.
+Uses `awk`.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_matching '^bar$'
@@ -567,9 +466,9 @@ bar
 > ---------------------|---
 > Arguments:           | _`regex`_
 
-Outputs all lines of input which do not match the specified regular expression.
+Outputs all lines of input which do not match the specified regular expression.  Never fails, unless _`regex`_ is missing.
 
-Uses `awk`.  Never fails, unless _`regex`_ is missing.
+Uses `awk`.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_not_matching '^bar$'
@@ -583,7 +482,7 @@ baz
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs up to one line of input, if the input consists of up to one line.
+Outputs up to one line of input, when the input consists of up to one line; nothing otherwise.
 
 ```
 $ echo -n | match_at_most_one ; echo $?
@@ -605,7 +504,7 @@ $ echo -e "foo\nbar" | match_at_most_one ; echo $?
 > ---------------------|---
 > Arguments:           | _none_
 
-Pipes input to output, if the input consists of one line or more.
+Pipes input to output, when the input consists of one line or more; nothing otherwise.
 
 ```
 $ echo -n | match_at_least_one ; echo $?
@@ -629,7 +528,7 @@ bar
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs one line of input, if the input consists of only one line.
+Outputs one line of input; when the input consists of only one line; nothing otherwise.
 
 ```
 $ echo -n | match_exactly_one ; echo $?
@@ -651,9 +550,7 @@ $ echo -e "foo\nbar" | match_exactly_one ; echo $?
 > ---------------------|---
 > Arguments:           | _none_
 
-Pipes input to output, removing at most one trailing newline.
-
-Never fails.
+Pipes input to output, removing at most one trailing newline.  Never fails.
 
 ```
 $ echo foo | strip_trailing_newline ; echo
@@ -680,9 +577,9 @@ Cross-platform compatibility functions.
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Portable natural sort.
+Portable natural sort.  Never fails.
 
-Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.  Never fails.
+Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.
 
 ```
 $ echo -e "foo-1\nfoo-12\nfoo-2" | sort_natural
@@ -703,9 +600,9 @@ foo-2
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Portable natural sort, for input separated by `NUL` bytes instead of newlines.
+Portable natural sort, for input separated by `NUL` bytes instead of newlines.  Never fails.
 
-Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.  Never fails.
+Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.
 
 
 Date formatting module
@@ -792,7 +689,7 @@ $ get_tmp_dir foo
 Outputs a user-friendly summary size of the data contained in the specified file or directory.
 
 ```
-$ get_size /app
+$ get_size foo
 868MB
 ```
 
@@ -844,9 +741,9 @@ baz
 > ---------------------|---
 > Arguments:           | _`dir any*`_
 
-Outputs relative paths to found files.
+Outputs relative paths to found files.  Never fails.
 
-Uses `find`, passing any additional arguments to the tool.  Never fails.
+Uses `find`, passing any additional arguments to the tool.
 
 ```
 $ mkdir foo foo/bar
@@ -861,9 +758,7 @@ bar/baz
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Outputs relative paths to files which do not exist in the old directory and exist in the new one, in natural order.
-
-Never fails.
+Outputs relative paths to files which do not exist in the old directory and exist in the new one, in natural order.  Never fails.
 
 ```
 $ mkdir foo1 foo2
@@ -878,9 +773,7 @@ bar2
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Outputs relative paths to files which differ between the two directories, in natural order.
-
-Never fails.
+Outputs relative paths to files which differ between the two directories, in natural order.  Never fails.
 
 ```
 $ mkdir foo1 foo2
@@ -896,9 +789,9 @@ bar
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Outputs relative paths to files which do not differ between the two directories, in natural order.
+Outputs relative paths to files which do not differ between the two directories, in natural order.  Never fails.
 
-Complementary to [find_changed](#find_changed).  Never fails.
+Complementary to [find_changed](#find_changed).
 
 ```
 $ mkdir foo1 foo2
@@ -914,9 +807,7 @@ baz
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Outputs relative paths to files which exist in the old directory and do not exist in the new one, in natural order.
-
-Never fails.
+Outputs relative paths to files which exist in the old directory and do not exist in the new one, in natural order.  Never fails.
 
 ```
 $ mkdir foo1 foo2
@@ -931,9 +822,9 @@ bar1
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Like [`find_added`](#find_added), [`find_changed`](#find_changed), [`find_not_changed`](#find_not_changed), and [`find_removed`](#find_removed) combined.
+Like [`find_added`](#find_added), [`find_changed`](#find_changed), [`find_not_changed`](#find_not_changed), and [`find_removed`](#find_removed) combined.  Never fails.
 
-Prefixes paths by `+` for added, `*` for changed, `=` for not changed, and `-` for removed.  Never fails.
+Prefixes paths by `+` for added, `*` for changed, `=` for not changed, and `-` for removed.
 
 ```
 $ mkdir foo1 foo2
@@ -963,7 +854,7 @@ Hashing module
 > ---------------------|---
 > Arguments:           | _none_
 
-Outputs a SHA1 digest of the input, if the input is not empty; nothing otherwise.
+Outputs a SHA1 digest of the input, when the input consists of at least one line; nothing otherwise.
 
 ```
 $ echo foo | do_hash
@@ -976,9 +867,9 @@ f1d2d2f924e986ac86fdf7b36c94bcdf32beec15
 > ---------------------|---
 > Arguments:           | _`dir any*`_
 
-Outputs a summary SHA1 digest of the data contained in all files found in the specified directory, if any files are found; nothing otherwise.
+Outputs a summary SHA1 digest of the data contained in all files found in the specified directory, when the directory contains at least one file; nothing otherwise.
 
-Sorts found files by relative path.  Uses `find`, passing any additional arguments to the tool.
+Uses `find`, passing any additional arguments to the tool.  Sorts files by relative path before hashing.
 
 ```
 $ mkdir foo
@@ -997,7 +888,7 @@ Archiving module
 
 Functions to simplify copying files and directories, creating and extracting archives, and more.
 
-The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, if available.
+The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
 
 
 ### `copy_file`
@@ -1039,6 +930,11 @@ Creates an archive of the contents of the specified directory.
 
 Overwrites existing files.  Creates the destination directory if needed.  Uses `tar`, passing any additional arguments to the tool.
 
+```
+$ create_archive foo bar.tar.gz
+       Creating bar.tar.gz... done, 8.0KB
+```
+
 
 ### `extract_archive_into`
 
@@ -1048,6 +944,11 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 Extracts the specified archive into the destination directory.
 
 Overwrites existing files.  Creates the destination directory if needed.  Uses `tar`, passing any additional arguments to the tool.
+
+```
+$ extract_archive_into bar.tar.gz baz
+       Extracting bar.tar.gz... done, 12KB
+```
 
 
 ### `extract_archive_over`
@@ -1065,9 +966,9 @@ Removes the destination directory.  Creates the destination directory if needed.
 > ---------------------|---
 > Arguments:           | _`dir any*`_
 
-Strips object file symbols from all files found in the specified directory.
+Strips object file symbols from all files found in the specified directory.  Never fails.
 
-Uses `strip --strip-unneeded` on Linux, `strip -u -r` on OS X, and does nothing on other platforms.  Also uses `find`, passing any additional arguments to the tool.  Never fails.
+Uses `strip --strip-unneeded` on Linux, `strip -u -r` on OS X, and does nothing on other platforms.  Also uses `find`, passing any additional arguments to the tool.
 
 
 Version control module
@@ -1077,7 +978,7 @@ Version control module
 > Source:              | [`git.sh`](https://github.com/mietek/bashmenot/blob/master/src/git.sh)
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_git_](http://git-scm.com/)
 
-Wrappers for `git`.
+Functions to simplify working with _git_.
 
 
 ### `hash_newest_git_commit`
@@ -1085,7 +986,12 @@ Wrappers for `git`.
 > ---------------------|---
 > Arguments:           | _`dir`_
 
-TODO
+Outputs a SHA1 digest of the specified repository `HEAD`, when the repository is not empty; nothing otherwise.  Never fails, unless _`dir`_ does not exist.
+
+```
+$ hash_newest_git_commit .
+d0ed0f48014efba06069abe3e1776a379612a0fa
+```
 
 
 ### `validate_git_url`
@@ -1093,7 +999,16 @@ TODO
 > ---------------------|---
 > Arguments:           | _`url`_
 
-TODO
+Checks whether the specified URL starts with a scheme supported by _git_.
+
+```
+$ validate_git_url https://github.com/mietek/bashmenot ; echo $?
+0
+```
+```
+$ validate_git_url foo ; echo $?
+1
+```
 
 
 ### `quiet_git_do`
@@ -1101,7 +1016,9 @@ TODO
 > ---------------------|---
 > Arguments:           | _`cmd any*`_
 
-TODO
+Wrapper for `git`.
+
+Used by the following functions in this module.  Passes any additional arguments to the tool.
 
 
 ### `git_clone_over`
@@ -1109,7 +1026,14 @@ TODO
 > ---------------------|---
 > Arguments:           | _`url dir`_
 
-TODO
+Clones the specified repository over the destination directory, along with any submodules, and outputs the hash of the newest commit.
+
+Removes the destination directory.  Creates the destination directory if needed.  Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
+
+```
+$ git_clone_over https://github.com/mietek/bashmenot foo
+df22d6d7b0d7ca83195088206e689f6d13ac2be0
+```
 
 
 ### `git_update_into`
@@ -1117,7 +1041,14 @@ TODO
 > ---------------------|---
 > Arguments:           | _`url dir`_
 
-TODO
+Ensures the destination directory contains an up-to-date checkout of the specified repository, along with any submodules, and outputs the hash of the newest commit.
+
+Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
+
+```
+$ git_update_into https://github.com/mietek/bashmenot foo
+df22d6d7b0d7ca83195088206e689f6d13ac2be0
+```
 
 
 HTTP transfer module
@@ -1135,9 +1066,7 @@ Functions to simplify transferring files using HTTP, with user-friendly logging 
 > ---------------------|---
 > Arguments:           | _`code`_
 
-Outputs a user-friendly description of the specified HTTP code.
-
-Never fails.
+Outputs a user-friendly description of the specified HTTP code.  Never fails.
 
 ```
 $ format_http_code_description 418
@@ -1228,7 +1157,7 @@ Functions to simplify storing files remotely using [Amazon S3 buckets](https://d
 
 Outputs the S3 URL of the specified resource.
 
-References [`BASHMENOT_S3_HOST`](#bashmenot_s3_host).
+References [`BASHMENOT_S3_HOST`](options/#bashmenot_s3_host).
 
 ```
 $ format_s3_url /foo/bar
@@ -1244,14 +1173,6 @@ https://s3.amazonaws.com/foo/bar
 Parses an S3 bucket listing in XML format into a file of objects.
 
 
-### `curl_list_s3`
-
-> ---------------------|---
-> Arguments:           | _`url`_
-
-TODO
-
-
 ### `s3_do`
 
 > ---------------------|---
@@ -1259,7 +1180,7 @@ TODO
 
 S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
-Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](#bashmenot_aws_secret_access_key).  Uses `curl`, passing any additional arguments to the tool.
+Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](options/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](options/#bashmenot_aws_secret_access_key).  Uses `curl`, passing any additional arguments to the tool.
 
 
 ### `s3_download`
@@ -1353,6 +1274,22 @@ $ s3_delete foo.example.com foo/bar
 ```
 $ s3_delete foo.example.com ''
        Deleting s3://foo.example.com/... 204 (no content)
+```
+
+
+### `curl_list_s3`
+
+> ---------------------|---
+> Arguments:           | _`url`_
+
+Outputs the contents of a publicly-accessible S3 bucket referenced by the specified URL.
+
+```
+$ curl_list_s3 https://s3.amazonaws.com/foo.example.com/
+       Listing https://s3.amazonaws.com/foo.example.com/... done
+foo/bar
+bar/baz/foo
+baz
 ```
 
 
