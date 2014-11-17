@@ -849,7 +849,7 @@ Hashing module
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh), [OpenSSL](https://openssl.org/)
 
 
-### `hash_do`
+### `get_hash`
 
 > ---------------------|---
 > Arguments:           | _none_
@@ -1180,7 +1180,7 @@ Parses an S3 bucket listing in XML format into a file of objects.
 
 S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
-Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](options/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](options/#bashmenot_aws_secret_access_key).  Uses `curl`, passing any additional arguments to the tool.
+Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](options/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](options/#bashmenot_aws_secret_access_key), unless [`BASHMENOT_NO_S3_AUTH`](options/#bashmenot_no_s3_auth) is set to `1`.  Uses `curl`, passing any additional arguments to the tool.
 
 
 ### `s3_download`

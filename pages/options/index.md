@@ -60,3 +60,11 @@ Secret used to authenticate S3 requests.
 > Default value:       | `s3.amazonaws.com`
 
 Address used to direct S3 requests.
+
+
+### `BASHMENOT_NO_S3_AUTH`
+
+> ---------------------|---
+> Default value:       | `0`
+
+Disables authenticating S3 requests.
