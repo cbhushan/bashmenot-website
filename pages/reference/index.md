@@ -1,17 +1,76 @@
 ---
-title: Function reference
+title: Programmer’s reference
 page-class: add-section-toc tweak-listings
 page-head: |
   <style>
-    header a.link-functions {
+    header a.link-reference {
       color: #f0690f;
     }
   </style>
 ---
 
 
-Function reference
-==================
+Programmer’s reference
+======================
+
+
+Environment variables
+---------------------
+
+### `BASHMENOT_URL`
+
+> ---------------------|---
+> Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
+> Type:                | _git_ URL
+
+URL of the _git_ repository from which _bashmenot_ updates itself.
+
+Uses the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
+
+
+### `BASHMENOT_NO_SELFUPDATE`
+
+> ---------------------|---
+> Default value:       | `0`
+> Type:                | `0` or `1`
+
+Disables self-updates.
+
+
+### `BASHMENOT_AWS_ACCESS_KEY_ID`
+
+> ---------------------|---
+> Default value:       | _none_
+> Type:                | optional string
+
+Amazon Web Services credential, used to authenticate S3 requests.
+
+
+### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
+
+> ---------------------|---
+> Default value:       | _none_
+> Type:                | optional string
+
+Amazon Web Services credential, used to authenticate S3 requests.
+
+
+### `BASHMENOT_S3_ENDPOINT`
+
+> ---------------------|---
+> Default value:       | `s3.amazonaws.com`
+> Type:                | hostname
+
+Hostname of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) responsible for [`BASHMENOT_S3_BUCKET`](#bashmenot_s3_bucket).
+
+
+### `BASHMENOT_NO_S3_AUTH`
+
+> ---------------------|---
+> Default value:       | `0`
+> Type:                | `0` or `1`
+
+Disables authenticating S3 requests.
 
 
 Logging module
@@ -20,8 +79,6 @@ Logging module
 > ---------------------|---
 > Source:              | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
 > Dependencies:        | _none_
-
-Basic functions to simplify communication with the user.
 
 
 ### `prefix_log`
@@ -73,7 +130,7 @@ Logs arguments to error output, prefixed by an arrow marker, and with a space in
 
 Logs arguments to error output, with no prefix.  Never fails.
 
-To be paired with [`log_begin`](#log_begin).
+To be paired with [`log_begin`](/reference/#log_begin).
 
 ```
 function foo () {
@@ -92,7 +149,7 @@ $ foo
 
 Logs arguments to error output, prefixed by whitespace.  Never fails.
 
-For less important messages than [`log`](#log).
+For less important messages than [`log`](/reference/#log).
 
 ```
 $ log_indent baring
@@ -107,7 +164,7 @@ $ log_indent baring
 
 Logs arguments to error output, prefixed by whitespace, and with a space instead of a newline at the end.  Never fails.
 
-To be paired with [`log_end`](#log_end).  For less important messages than [`log_begin`](#log_begin).
+To be paired with [`log_end`](/reference/#log_end).  For less important messages than [`log_begin`](/reference/#log_begin).
 
 ```
 function bar () {
@@ -139,7 +196,7 @@ $ log_label foo: bar
 
 Logs arguments to error output, prefixed by whitespace, and with padding between _`label`_ and the other arguments.  Never fails.
 
-For less important messages than [`log_label`](#log_label).
+For less important messages than [`log_label`](/reference/#log_label).
 
 ```
 $ log_indent_label foo: bar
@@ -209,8 +266,6 @@ Expectation control module
 > ---------------------|---
 > Source:              | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 > Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
-
-Functions for declaring and checking preconditions, postconditions, and invariants.  Design-by-contract programming, now in [GNU _bash_](https://gnu.org/software/bash/).
 
 
 ### `expect_args`
@@ -292,8 +347,6 @@ Platform detection module
 > Source:              | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
 
-Basic functions for cross-platform compatibility.
-
 
 ### `format_platform_description`
 
@@ -304,7 +357,7 @@ Outputs a user-friendly description of the specified platform identifier.  Never
 
 ```
 $ format_platform_description linux-ubuntu-14.04-x86_64
-Ubuntu 14.04 LTS (64-bit)
+Ubuntu 14.04 LTS (x86_64)
 ```
 
 
@@ -380,8 +433,6 @@ Quoting module
 > Source:              | [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh)
 > Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh)
 
-Additional functions to simplify communication with the user.
-
 
 ### `quote`
 
@@ -402,8 +453,6 @@ Line processing module
 > ---------------------|---
 > Source:              | [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh)
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh)
-
-Basic functions for composable line-oriented text processing.
 
 
 ### `filter_first`
@@ -449,9 +498,9 @@ bar
 ### `filter_matching`
 
 > ---------------------|---
-> Arguments:           | _`regex`_
+> Arguments:           | _`pattern`_
 
-Outputs all lines of input which match the specified regular expression.  Never fails, unless _`regex`_ is missing.
+Outputs all lines of input which match the specified regular expression.  Never fails, unless _`pattern`_ is missing.
 
 Uses `awk`.
 
@@ -464,9 +513,9 @@ bar
 ### `filter_not_matching`
 
 > ---------------------|---
-> Arguments:           | _`regex`_
+> Arguments:           | _`pattern`_
 
-Outputs all lines of input which do not match the specified regular expression.  Never fails, unless _`regex`_ is missing.
+Outputs all lines of input which do not match the specified regular expression.  Never fails, unless _`pattern`_ is missing.
 
 Uses `awk`.
 
@@ -569,8 +618,6 @@ Sorting module
 > Source:              | [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
 > Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _sort_](https://gnu.org/software/coreutils/manual/html_node/sort-invocation.html)
 
-Cross-platform compatibility functions.
-
 
 ### `sort_natural`
 
@@ -612,8 +659,6 @@ Date formatting module
 > Source:              | [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)
 > Dependencies:        | [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
-Cross-platform compatibility functions.
-
 
 ### `get_http_date`
 
@@ -630,7 +675,7 @@ Fri, 05 Nov 2014 23:59:59 +0000
 ```
 
 
-### `get_date`
+### `get_iso_date`
 
 > ---------------------|---
 > Arguments:           | _`any*`_
@@ -640,7 +685,7 @@ Outputs a UTC date and time in ISO 8601 format.
 Uses `date` on Linux, and `gdate` on other platforms, passing any additional arguments to the tool.
 
 ```
-$ get_date
+$ get_iso_date
 2014-11-05
 ```
 
@@ -651,8 +696,6 @@ File system module
 > ---------------------|---
 > Source:              | [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh)
-
-Functions to simplify working with the file system.
 
 
 ### `get_tmp_file`
@@ -791,7 +834,7 @@ bar
 
 Outputs relative paths to files which do not differ between the two directories, in natural order.  Never fails.
 
-Complementary to [find_changed](#find_changed).
+Complementary to [find_changed](/reference/#find_changed).
 
 ```
 $ mkdir foo1 foo2
@@ -822,7 +865,7 @@ bar1
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Like [`find_added`](#find_added), [`find_changed`](#find_changed), [`find_not_changed`](#find_not_changed), and [`find_removed`](#find_removed) combined.  Never fails.
+Like [`find_added`](/reference/#find_added), [`find_changed`](/reference/#find_changed), [`find_not_changed`](/reference/#find_not_changed), and [`find_removed`](/reference/#find_removed) combined.  Never fails.
 
 Prefixes paths by `+` for added, `*` for changed, `=` for not changed, and `-` for removed.
 
@@ -886,10 +929,6 @@ Archiving module
 > Source:              | [`tar.sh`](https://github.com/mietek/bashmenot/blob/master/src/tar.sh)
 > Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`quote.sh`](https://github.com/mietek/bashmenot/blob/master/src/quote.sh), [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
 
-Functions to simplify copying files and directories, creating and extracting archives, and more.
-
-The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
-
 
 ### `copy_file`
 
@@ -930,6 +969,8 @@ Creates an archive of the contents of the specified directory.
 
 Overwrites existing files.  Creates the destination directory if needed.  Uses `tar`, passing any additional arguments to the tool.
 
+The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
+
 ```
 $ create_archive foo bar.tar.gz
        Creating bar.tar.gz... done, 8.0KB
@@ -945,6 +986,8 @@ Extracts the specified archive into the destination directory.
 
 Overwrites existing files.  Creates the destination directory if needed.  Uses `tar`, passing any additional arguments to the tool.
 
+The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
+
 ```
 $ extract_archive_into bar.tar.gz baz
        Extracting bar.tar.gz... done, 12KB
@@ -959,6 +1002,8 @@ $ extract_archive_into bar.tar.gz baz
 Extracts the specified archive over the destination directory.
 
 Removes the destination directory.  Creates the destination directory if needed.  Uses `tar`, passing any additional arguments to the tool.
+
+The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
 
 
 ### `strip_tree`
@@ -977,8 +1022,6 @@ Version control module
 > ---------------------|---
 > Source:              | [`git.sh`](https://github.com/mietek/bashmenot/blob/master/src/git.sh)
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_git_](http://git-scm.com/)
-
-Functions to simplify working with _git_.
 
 
 ### `hash_newest_git_commit`
@@ -999,7 +1042,7 @@ d0ed0f48014efba06069abe3e1776a379612a0fa
 > ---------------------|---
 > Arguments:           | _`url`_
 
-Checks whether the specified URL starts with a scheme supported by _git_.
+Checks whether the specified URL starts with a URL scheme supported by _git_.
 
 ```
 $ validate_git_url https://github.com/mietek/bashmenot ; echo $?
@@ -1051,14 +1094,12 @@ df22d6d7b0d7ca83195088206e689f6d13ac2be0
 ```
 
 
-HTTP transfer module
---------------------
+Remote storage module
+---------------------
 
 > ---------------------|---
 > Source:              | [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh)
 > Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_curl_](http://curl.haxx.se/)
-
-Functions to simplify transferring files using HTTP, with user-friendly logging and failure handling.
 
 
 ### `format_http_code_description`
@@ -1147,8 +1188,6 @@ Amazon S3 storage module
 > Source:              | [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)
 > Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://openssl.org/)
 
-Functions to simplify storing files remotely using [Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), with user-friendly logging and failure handling.
-
 
 ### `format_s3_url`
 
@@ -1157,7 +1196,7 @@ Functions to simplify storing files remotely using [Amazon S3 buckets](https://d
 
 Outputs the S3 URL of the specified resource.
 
-References [`BASHMENOT_S3_HOST`](options/#bashmenot_s3_host).
+References [`BASHMENOT_S3_ENDPOINT`](/reference/#bashmenot_s3_endpoint).
 
 ```
 $ format_s3_url /foo/bar
@@ -1178,9 +1217,9 @@ Parses an S3 bucket listing in XML format into a file of objects.
 > ---------------------|---
 > Arguments:           | _`url any*`_
 
-S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
+S3-specific wrapper for [`curl_do`](/reference/#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
-Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](options/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](options/#bashmenot_aws_secret_access_key), unless [`BASHMENOT_NO_S3_AUTH`](options/#bashmenot_no_s3_auth) is set to `1`.  Uses `curl`, passing any additional arguments to the tool.
+Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](/reference/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](/reference/#bashmenot_aws_secret_access_key), unless [`BASHMENOT_NO_S3_AUTH`](/reference/#bashmenot_no_s3_auth) is set to `1`.  Uses `curl`, passing any additional arguments to the tool.
 
 
 ### `s3_download`
