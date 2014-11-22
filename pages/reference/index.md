@@ -89,7 +89,7 @@ Logging module
 Logs arguments to error output with the specified prefix. Never fails.
 
 ```
-$ prefix_log foo bar
+# prefix_log foo bar
 foobar
 ```
 
@@ -110,7 +110,7 @@ Logs arguments to error output with the specified prefix, and with a space inste
 Logs arguments to error output, prefixed by an arrow marker.  Never fails.
 
 ```
-$ log fooing
+# log fooing
 -----> fooing
 ```
 
@@ -137,7 +137,7 @@ function foo () {
   log_begin fooing...
   log_end fooed
 }
-$ foo
+# foo
 -----> fooing... fooed
 ```
 
@@ -152,7 +152,7 @@ Logs arguments to error output, prefixed by whitespace.  Never fails.
 For less important messages than [`log`](/reference/#log).
 
 ```
-$ log_indent baring
+# log_indent baring
        baring
 ```
 
@@ -171,7 +171,7 @@ function bar () {
   log_indent_begin baring...
   log_end bared
 }
-$ bar
+# bar
        baring... bared
 ```
 
@@ -184,7 +184,7 @@ $ bar
 Logs arguments to error output, prefixed by an arrow marker, and with padding between _`label`_ and the other arguments.  Never fails.
 
 ```
-$ log_label foo: bar
+# log_label foo: bar
 -----> foo:                                      bar
 ```
 
@@ -199,7 +199,7 @@ Logs arguments to error output, prefixed by whitespace, and with padding between
 For less important messages than [`log_label`](/reference/#log_label).
 
 ```
-$ log_indent_label foo: bar
+# log_indent_label foo: bar
        foo:                                      bar
 ```
 
@@ -212,7 +212,7 @@ $ log_indent_label foo: bar
 Logs arguments to error output, prefixed by a debug marker.  Never fails.
 
 ```
-$ log_debug foo
+# log_debug foo
    *** DEBUG: foo
 ```
 
@@ -225,7 +225,7 @@ $ log_debug foo
 Logs arguments to error output, prefixed by a warning marker.  Never fails.
 
 ```
-$ log_warning foo
+# log_warning foo
    *** WARNING: foo
 ```
 
@@ -238,7 +238,7 @@ $ log_warning foo
 Logs arguments to error output, prefixed by an error marker.  Never fails.
 
 ```
-$ log_error foo
+# log_error foo
    *** ERROR: foo
 ```
 
@@ -254,7 +254,7 @@ Logs an error and exits with `1` as the exit status.
 function foo () {
   false || die foo
 }
-$ foo
+# foo
    *** ERROR: foo
 ^D
 ```
@@ -283,7 +283,7 @@ function foo () {
   expect_args bar baz -- "$@"
   echo "${bar} ${baz}"
 }
-$ foo
+# foo
    *** ERROR: foo: Expected args: bar baz
 ```
 
@@ -300,7 +300,7 @@ function foo () {
   expect_vars BAR
   echo "${BAR}"
 }
-$ foo
+# foo
    *** ERROR: foo: Expected var: BAR
 ```
 
@@ -317,7 +317,7 @@ function foo () {
   expect_existing bar
   cat bar
 }
-$ foo
+# foo
    *** ERROR: foo: Expected existing bar
 ```
 
@@ -334,8 +334,8 @@ function foo () {
   expect_no_existing bar
   touch bar
 }
-$ touch bar
-$ foo
+# touch bar
+# foo
    *** ERROR: foo: Unexpected existing bar
 ```
 
@@ -356,7 +356,7 @@ Platform detection module
 Outputs a user-friendly description of the specified platform identifier.  Never fails.
 
 ```
-$ format_platform_description linux-ubuntu-14.04-x86_64
+# format_platform_description linux-ubuntu-14.04-x86_64
 Ubuntu 14.04 LTS (x86_64)
 ```
 
@@ -369,7 +369,7 @@ Ubuntu 14.04 LTS (x86_64)
 Outputs the architecture part of the host platform identifier, or nothing.  Never fails.
 
 ```
-$ detect_arch
+# detect_arch
 x86_64
 ```
 
@@ -382,7 +382,7 @@ x86_64
 Outputs the OS label part of the host platform identifier, or nothing.  Never fails.
 
 ```
-$ detect_linux_label
+# detect_linux_label
 ubuntu
 ```
 
@@ -395,7 +395,7 @@ ubuntu
 Outputs the OS version part of the host platform identifier, or nothing.  Never fails.
 
 ```
-$ detect_linux_version
+# detect_linux_version
 14.04
 ```
 
@@ -408,7 +408,7 @@ $ detect_linux_version
 Outputs the OS part of the host platform identifier.  Never fails.
 
 ```
-$ detect_os
+# detect_os
 linux-ubuntu-14.04
 ```
 
@@ -421,7 +421,7 @@ linux-ubuntu-14.04
 Outputs the host platform identifier.  Never fails.
 
 ```
-$ detect_platform
+# detect_platform
 linux-ubuntu-14.04-x86_64
 ```
 
@@ -442,7 +442,7 @@ Quoting module
 Pipes input to error output, prefixed by whitespace.  Never fails.
 
 ```
-$ echo foo | quote
+# echo foo | quote
        foo
 ```
 
@@ -463,7 +463,7 @@ Line processing module
 Outputs the first line of input.  Never fails.
 
 ```
-$ echo -e "foo\nbar\nbaz" | filter_first
+# echo -e "foo\nbar\nbaz" | filter_first
 foo
 ```
 
@@ -476,7 +476,7 @@ foo
 Outputs the last line of input.  Never fails.
 
 ```
-$ echo -e "foo\nbar\nbaz" | filter_last
+# echo -e "foo\nbar\nbaz" | filter_last
 baz
 ```
 
@@ -489,7 +489,7 @@ baz
 Outputs all lines of input except the last.  Never fails.
 
 ```
-$ echo -e "foo\nbar\nbaz" | filter_not_last
+# echo -e "foo\nbar\nbaz" | filter_not_last
 foo
 bar
 ```
@@ -505,7 +505,7 @@ Outputs all lines of input which match the specified regular expression.  Never 
 Uses `awk`.
 
 ```
-$ echo -e "foo\nbar\nbaz" | filter_matching '^bar$'
+# echo -e "foo\nbar\nbaz" | filter_matching '^bar$'
 bar
 ```
 
@@ -520,7 +520,7 @@ Outputs all lines of input which do not match the specified regular expression. 
 Uses `awk`.
 
 ```
-$ echo -e "foo\nbar\nbaz" | filter_not_matching '^bar$'
+# echo -e "foo\nbar\nbaz" | filter_not_matching '^bar$'
 foo
 baz
 ```
@@ -534,16 +534,16 @@ baz
 Outputs up to one line of input, when the input consists of up to one line; nothing otherwise.
 
 ```
-$ echo -n | match_at_most_one ; echo $?
+# echo -n | match_at_most_one ; echo $?
 0
 ```
 ```
-$ echo foo | match_at_most_one ; echo $?
+# echo foo | match_at_most_one ; echo $?
 foo
 0
 ```
 ```
-$ echo -e "foo\nbar" | match_at_most_one ; echo $?
+# echo -e "foo\nbar" | match_at_most_one ; echo $?
 1
 ```
 
@@ -556,16 +556,16 @@ $ echo -e "foo\nbar" | match_at_most_one ; echo $?
 Pipes input to output, when the input consists of one line or more; nothing otherwise.
 
 ```
-$ echo -n | match_at_least_one ; echo $?
+# echo -n | match_at_least_one ; echo $?
 1
 ```
 ```
-$ echo foo | match_at_least_one ; echo $?
+# echo foo | match_at_least_one ; echo $?
 foo
 0
 ```
 ```
-$ echo -e "foo\nbar" | match_at_least_one ; echo $?
+# echo -e "foo\nbar" | match_at_least_one ; echo $?
 foo
 bar
 0
@@ -580,16 +580,16 @@ bar
 Outputs one line of input; when the input consists of only one line; nothing otherwise.
 
 ```
-$ echo -n | match_exactly_one ; echo $?
+# echo -n | match_exactly_one ; echo $?
 1
 ```
 ```
-$ echo foo | match_exactly_one ; echo $?
+# echo foo | match_exactly_one ; echo $?
 foo
 0
 ```
 ```
-$ echo -e "foo\nbar" | match_exactly_one ; echo $?
+# echo -e "foo\nbar" | match_exactly_one ; echo $?
 1
 ```
 
@@ -602,11 +602,11 @@ $ echo -e "foo\nbar" | match_exactly_one ; echo $?
 Pipes input to output, removing at most one trailing newline.  Never fails.
 
 ```
-$ echo foo | strip_trailing_newline ; echo
+# echo foo | strip_trailing_newline ; echo
 foo
 ```
 ```
-$ echo -e "foo\n" | strip_trailing_newline
+# echo -e "foo\n" | strip_trailing_newline
 foo
 ```
 
@@ -629,13 +629,13 @@ Portable natural sort.  Never fails.
 Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.
 
 ```
-$ echo -e "foo-1\nfoo-12\nfoo-2" | sort_natural
+# echo -e "foo-1\nfoo-12\nfoo-2" | sort_natural
 foo-1
 foo-2
 foo-12
 ```
 ```
-$ echo -e "foo-1\nfoo-12\nfoo-2" | sort
+# echo -e "foo-1\nfoo-12\nfoo-2" | sort
 foo-1
 foo-12
 foo-2
@@ -670,7 +670,7 @@ Outputs a UTC date and time in RFC 2822 format.
 Uses `date` on Linux, and `gdate` on other platforms, passing any additional arguments to the tool.
 
 ```
-$ get_http_date
+# get_http_date
 Fri, 05 Nov 2014 23:59:59 +0000
 ```
 
@@ -685,7 +685,7 @@ Outputs a UTC date and time in ISO 8601 format.
 Uses `date` on Linux, and `gdate` on other platforms, passing any additional arguments to the tool.
 
 ```
-$ get_iso_date
+# get_iso_date
 2014-11-05
 ```
 
@@ -706,7 +706,7 @@ File system module
 Outputs an absolute path to a unique temporary file.
 
 ```
-$ get_tmp_file foo
+# get_tmp_file foo
 /tmp/foo.Lzi6bRzLS0
 ```
 
@@ -719,7 +719,7 @@ $ get_tmp_file foo
 Outputs an absolute path to a unique temporary directory.
 
 ```
-$ get_tmp_dir foo
+# get_tmp_dir foo
 /tmp/foo.Gf9J615PeE
 ```
 
@@ -732,7 +732,7 @@ $ get_tmp_dir foo
 Outputs a user-friendly summary size of the data contained in the specified file or directory.
 
 ```
-$ get_size foo
+# get_size foo
 868MB
 ```
 
@@ -747,8 +747,8 @@ Outputs the modification time of the specified file or directory, in seconds sin
 Uses `stat -c "%Y"` on Linux, and `stat -f "%m"` on other platforms.
 
 ```
-$ touch foo
-$ get_modification_time foo
+# touch foo
+# get_modification_time foo
 1415379516
 ```
 
@@ -761,7 +761,7 @@ $ get_modification_time foo
 Outputs an absolute path to the specified directory, collapsing any symbolic links.
 
 ```
-$ get_dir_path .
+# get_dir_path .
 /foo/bar/baz
 ```
 
@@ -774,7 +774,7 @@ $ get_dir_path .
 Outputs the name of the specified directory.
 
 ```
-$ get_dir_name .
+# get_dir_name .
 baz
 ```
 
@@ -789,9 +789,9 @@ Outputs relative paths to found files.  Never fails.
 Uses `find`, passing any additional arguments to the tool.
 
 ```
-$ mkdir foo foo/bar
-$ touch foo/bar/baz
-$ find_tree foo
+# mkdir foo foo/bar
+# touch foo/bar/baz
+# find_tree foo
 bar/baz
 ```
 
@@ -804,9 +804,9 @@ bar/baz
 Outputs relative paths to files which do not exist in the old directory and exist in the new one, in natural order.  Never fails.
 
 ```
-$ mkdir foo1 foo2
-$ touch foo2/bar2
-$ find_added foo1 foo2
+# mkdir foo1 foo2
+# touch foo2/bar2
+# find_added foo1 foo2
 bar2
 ```
 
@@ -819,10 +819,10 @@ bar2
 Outputs relative paths to files which differ between the two directories, in natural order.  Never fails.
 
 ```
-$ mkdir foo1 foo2
-$ echo bar1 >foo1/bar
-$ echo bar2 >foo2/bar
-$ find_changed foo1 foo2
+# mkdir foo1 foo2
+# echo bar1 >foo1/bar
+# echo bar2 >foo2/bar
+# find_changed foo1 foo2
 bar
 ```
 
@@ -837,10 +837,10 @@ Outputs relative paths to files which do not differ between the two directories,
 Complementary to [find_changed](/reference/#find_changed).
 
 ```
-$ mkdir foo1 foo2
-$ echo baz >foo1/baz
-$ echo baz >foo2/baz
-$ find_not_changed foo1 foo2
+# mkdir foo1 foo2
+# echo baz >foo1/baz
+# echo baz >foo2/baz
+# find_not_changed foo1 foo2
 baz
 ```
 
@@ -853,9 +853,9 @@ baz
 Outputs relative paths to files which exist in the old directory and do not exist in the new one, in natural order.  Never fails.
 
 ```
-$ mkdir foo1 foo2
-$ touch foo1/bar1
-$ find_removed foo1 foo2
+# mkdir foo1 foo2
+# touch foo1/bar1
+# find_removed foo1 foo2
 bar1
 ```
 
@@ -870,13 +870,13 @@ Like [`find_added`](/reference/#find_added), [`find_changed`](/reference/#find_c
 Prefixes paths by `+` for added, `*` for changed, `=` for not changed, and `-` for removed.
 
 ```
-$ mkdir foo1 foo2
-$ touch foo1/bar1 foo2/bar2
-$ echo bar1 >foo1/bar
-$ echo bar2 >foo2/bar
-$ echo baz >foo1/baz
-$ echo baz >foo2/baz
-$ compare_tree foo1 foo2
+# mkdir foo1 foo2
+# touch foo1/bar1 foo2/bar2
+# echo bar1 >foo1/bar
+# echo bar2 >foo2/bar
+# echo baz >foo1/baz
+# echo baz >foo2/baz
+# compare_tree foo1 foo2
 - bar1
 + bar2
 * bar
@@ -900,7 +900,7 @@ Hashing module
 Outputs a SHA1 digest of the input, when the input consists of at least one line; nothing otherwise.
 
 ```
-$ echo foo | do_hash
+# echo foo | do_hash
 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15
 ```
 
@@ -915,9 +915,9 @@ Outputs a summary SHA1 digest of the data contained in all files found in the sp
 Uses `find`, passing any additional arguments to the tool.  Sorts files by relative path before hashing.
 
 ```
-$ mkdir foo
-$ touch foo/bar
-$ hash_tree foo
+# mkdir foo
+# touch foo/bar
+# hash_tree foo
 df1d77216a4168ceb2112b2078ebc7d5fc6ac446
 ```
 
@@ -972,7 +972,7 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
 
 ```
-$ create_archive foo bar.tar.gz
+# create_archive foo bar.tar.gz
        Creating bar.tar.gz... done, 8.0KB
 ```
 
@@ -989,7 +989,7 @@ Overwrites existing files.  Creates the destination directory if needed.  Uses `
 The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip2`, and `pxz` compression tools are used, when available.
 
 ```
-$ extract_archive_into bar.tar.gz baz
+# extract_archive_into bar.tar.gz baz
        Extracting bar.tar.gz... done, 12KB
 ```
 
@@ -1032,7 +1032,7 @@ Version control module
 Outputs a SHA1 digest of the specified repository `HEAD`, when the repository is not empty; nothing otherwise.  Never fails, unless _`dir`_ does not exist.
 
 ```
-$ hash_newest_git_commit .
+# hash_newest_git_commit .
 d0ed0f48014efba06069abe3e1776a379612a0fa
 ```
 
@@ -1045,11 +1045,11 @@ d0ed0f48014efba06069abe3e1776a379612a0fa
 Checks whether the specified URL starts with a URL scheme supported by _git_.
 
 ```
-$ validate_git_url https://github.com/mietek/bashmenot ; echo $?
+# validate_git_url https://github.com/mietek/bashmenot ; echo $?
 0
 ```
 ```
-$ validate_git_url foo ; echo $?
+# validate_git_url foo ; echo $?
 1
 ```
 
@@ -1074,7 +1074,7 @@ Clones the specified repository over the destination directory, along with any s
 Removes the destination directory.  Creates the destination directory if needed.  Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
 
 ```
-$ git_clone_over https://github.com/mietek/bashmenot foo
+# git_clone_over https://github.com/mietek/bashmenot foo
 df22d6d7b0d7ca83195088206e689f6d13ac2be0
 ```
 
@@ -1089,7 +1089,7 @@ Ensures the destination directory contains an up-to-date checkout of the specifi
 Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
 
 ```
-$ git_update_into https://github.com/mietek/bashmenot foo
+# git_update_into https://github.com/mietek/bashmenot foo
 df22d6d7b0d7ca83195088206e689f6d13ac2be0
 ```
 
@@ -1110,7 +1110,7 @@ Remote storage module
 Outputs a user-friendly description of the specified HTTP code.  Never fails.
 
 ```
-$ format_http_code_description 418
+# format_http_code_description 418
 418 I'm a teapot
 ```
 
@@ -1135,7 +1135,7 @@ Downloads the specified resource with HTTP `GET`.
 Overwrites existing files.  Creates the destination directory if needed.
 
 ```
-$ curl_download httpbin.org/get foo
+# curl_download httpbin.org/get foo
        Downloading httpbin.org/get... done
 ```
 
@@ -1148,7 +1148,7 @@ $ curl_download httpbin.org/get foo
 Accesses the specified resource with HTTP `HEAD`.
 
 ```
-$ curl_check httpbin.org/status/404
+# curl_check httpbin.org/status/404
        Checking httpbin.org/status/404... 404 (not found)
 ```
 
@@ -1163,7 +1163,7 @@ Uploads the specified file with HTTP `PUT`.
 Overwrites existing resources.
 
 ```
-$ curl_upload foo httpbin.org/put
+# curl_upload foo httpbin.org/put
        Uploading httpbin.org/put... done
 ```
 
@@ -1176,7 +1176,7 @@ $ curl_upload foo httpbin.org/put
 Deletes the specified resource with HTTP `DELETE`.
 
 ```
-$ curl_delete httpbin.org/delete
+# curl_delete httpbin.org/delete
        Deleting httpbin.org/delete... done
 ```
 
@@ -1199,7 +1199,7 @@ Outputs the S3 URL of the specified resource.
 References [`BASHMENOT_S3_ENDPOINT`](/reference/#bashmenot_s3_endpoint).
 
 ```
-$ format_s3_url /foo/bar
+# format_s3_url /foo/bar
 https://s3.amazonaws.com/foo/bar
 ```
 
@@ -1232,7 +1232,7 @@ Downloads the specified resource from S3 with HTTP `GET`.
 Overwrites existing files.  Creates the destination directory if needed.
 
 ```
-$ s3_download foo.example.com foo/bar bar
+# s3_download foo.example.com foo/bar bar
        Downloading s3://foo.example.com/foo/bar... done
 ```
 
@@ -1247,7 +1247,7 @@ Accesses the specified S3 resource with HTTP `HEAD`.
 An empty source object may be specified to access the bucket itself.
 
 ```
-$ s3_check foo.example.com no-foo
+# s3_check foo.example.com no-foo
        Checking s3://foo.example.com/no-foo... 404 (not found)
 ```
 
@@ -1262,7 +1262,7 @@ Uploads the specified file to S3 with HTTP `PUT`.
 Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).  Commonly used values are `private` and `public-read`.
 
 ```
-$ s3_upload foo foo.example.com bar/foo private
+# s3_upload foo foo.example.com bar/foo private
        Uploading s3://foo.example.com/bar/foo... done
 ```
 
@@ -1277,7 +1277,7 @@ Creates an S3 bucket with HTTP `PUT`.
 The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
-$ s3_create foo.example.com private
+# s3_create foo.example.com private
        Creating s3://foo.example.com/... done
 ```
 
@@ -1292,7 +1292,7 @@ Copies the specified resource on S3 with HTTP `PUT`, without downloading or uplo
 The source and destination may be the same bucket or separate buckets.  The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
-$ s3_copy foo.example.com foo bar.example.com bar private
+# s3_copy foo.example.com foo bar.example.com bar private
        Copying s3://foo.example.com/foo to s3://bar.example.com/bar... done
 ```
 
@@ -1307,11 +1307,11 @@ Deletes the specified resource from S3 with HTTP `DELETE`.
 An empty destination object may be specified to delete the bucket itself.
 
 ```
-$ s3_delete foo.example.com foo/bar
+# s3_delete foo.example.com foo/bar
        Deleting s3://foo.example.com/foo/bar... 204 (no content)
 ```
 ```
-$ s3_delete foo.example.com ''
+# s3_delete foo.example.com ''
        Deleting s3://foo.example.com/... 204 (no content)
 ```
 
@@ -1324,7 +1324,7 @@ $ s3_delete foo.example.com ''
 Outputs the contents of a publicly-accessible S3 bucket referenced by the specified URL.
 
 ```
-$ curl_list_s3 https://s3.amazonaws.com/foo.example.com/
+# curl_list_s3 https://s3.amazonaws.com/foo.example.com/
        Listing https://s3.amazonaws.com/foo.example.com/... done
 foo/bar
 bar/baz/foo
@@ -1342,12 +1342,12 @@ Outputs the contents of the specified S3 bucket, downloaded with HTTP `GET`, lis
 An empty prefix may be specified to list the contents of the entire bucket.
 
 ```
-$ s3_list foo.example.com foo
+# s3_list foo.example.com foo
        Listing s3://foo.example.com/?prefix=foo... done
 foo/bar
 ```
 ```
-$ s3_list foo.example.com ''
+# s3_list foo.example.com ''
        Listing s3://foo.example.com/... done
 foo/bar
 bar/baz/foo
