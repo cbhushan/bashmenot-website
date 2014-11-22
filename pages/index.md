@@ -19,28 +19,32 @@ _bashmenot_
 _bashmenot_ is a library of shell functions for [GNU _bash_](https://gnu.org/software/bash/).
 
 
-Usage
------
-
-_bashmenot_ is installed by cloning the source repository, and updates itself when the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file is sourced.
-
-```
-$ git clone https://github.com/mietek/bashmenot
-$ source bashmenot/src.sh
-```
-
-Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced in the right order.
-
-
 ### Support
 
 Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).  There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
 
 
+Usage
+-----
+
+_bashmenot_ is installed with _git_, and automatically updates itself when the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file is sourced.
+
+```
+# git clone https://github.com/mietek/bashmenot
+# source bashmenot/src.sh
+```
+
+Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced in the right order.
+
+
 ### Documentation
 
-- [Programmer’s reference](/reference/)
-- [Source code](https://github.com/mietek/bashmenot/)
+<div><nav>
+<ul class="menu open">
+<li><a href="/reference/">Programmer’s reference</a></li>
+<li><a href="https://github.com/mietek/bashmenot/">Source code</a></li>
+</ul>
+</nav></div>
 
 
 ### Dependencies
