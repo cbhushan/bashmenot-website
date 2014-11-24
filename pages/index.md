@@ -29,12 +29,12 @@ Usage
 
 _bashmenot_ is installed with _git_, and automatically updates itself when the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file is sourced.
 
+Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced in the right order.
+
 ```
 # git clone https://github.com/mietek/bashmenot
 # source bashmenot/src.sh
 ```
-
-Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced in the right order.
 
 
 ### Documentation
