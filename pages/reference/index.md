@@ -364,6 +364,19 @@ Ubuntu 14.04 LTS (x86_64)
 ```
 
 
+### `detect_os`
+
+> ---------------------|---
+> Arguments:           | _none_
+
+Outputs the OS part of the host platform identifier.  Never fails.
+
+```
+# detect_os
+linux
+```
+
+
 ### `detect_arch`
 
 > ---------------------|---
@@ -374,45 +387,6 @@ Outputs the architecture part of the host platform identifier, or nothing.  Neve
 ```
 # detect_arch
 x86_64
-```
-
-
-### `detect_linux_label`
-
-> ---------------------|---
-> Arguments:           | _none_
-
-Outputs the OS label part of the host platform identifier, or nothing.  Never fails.
-
-```
-# detect_linux_label
-ubuntu
-```
-
-
-### `detect_linux_version`
-
-> ---------------------|---
-> Arguments:           | _none_
-
-Outputs the OS version part of the host platform identifier, or nothing.  Never fails.
-
-```
-# detect_linux_version
-14.04
-```
-
-
-### `detect_os`
-
-> ---------------------|---
-> Arguments:           | _none_
-
-Outputs the OS part of the host platform identifier.  Never fails.
-
-```
-# detect_os
-linux-ubuntu-14.04
 ```
 
 
