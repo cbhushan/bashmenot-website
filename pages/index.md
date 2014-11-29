@@ -16,7 +16,7 @@ page-footer: |
 _bashmenot_
 ===========
 
-_bashmenot_ is a library of shell functions for [GNU _bash_](https://gnu.org/software/bash/).
+_bashmenot_ is a library of shell functions, powering [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
 
 
 ### Support
@@ -27,9 +27,7 @@ Please report any problems with _bashmenot_ on the [issue tracker](https://githu
 Usage
 -----
 
-_bashmenot_ is installed with _git_, and automatically updates itself when the top-level [`src.sh`](https://github.com/mietek/bashmenot/blob/master/src.sh) file is sourced.
-
-Individual _bashmenot_ modules can also be sourced separately, as long as their dependencies are sourced in the right order.
+_bashmenot_ is installed with _git_, and automatically keeps itself up-to-date.
 
 ```
 # git clone https://github.com/mietek/bashmenot
@@ -74,3 +72,5 @@ Like my work?  I am available for consulting.  Say <a class="hello" href="">hell
 Thanks to [Kenneth Reitz](http://kennethreitz.org/) for building [_httpbin_](https://httpbin.org/).
 
 The monospaced font used in this website is [PragmataPro](http://fsd.it/fonts/pragmatapro.htm), by [Fabrizio Schiavi](http://fsd.it/).  The sans-serif font is [Concourse](http://practicaltypography.com/concourse.html), by [Matthew Butterick](http://practicaltypography.com/).  Website built with [_cannot_](https://cannot.mietek.io/).
+
+This project is not affiliated with [Heroku](https://heroku.com/) or [Amazon](https://amazon.com/).

@@ -20,33 +20,13 @@ Programmer’s reference
 Environment variables
 ---------------------
 
-### `BASHMENOT_URL`
-
-> ---------------------|---
-> Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
-> Type:                | _git_ URL
-
-URL of the _git_ repository from which _bashmenot_ updates itself.
-
-Uses the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
-
-
-### `BASHMENOT_NO_SELFUPDATE`
-
-> ---------------------|---
-> Default value:       | `0`
-> Type:                | `0` or `1`
-
-Disables self-updates.
-
-
 ### `BASHMENOT_AWS_ACCESS_KEY_ID`
 
 > ---------------------|---
 > Default value:       | _none_
 > Type:                | optional string
 
-Amazon Web Services credential, used to authenticate S3 requests.
+Amazon Web Services username, used to authenticate S3 requests.
 
 
 ### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
@@ -55,16 +35,16 @@ Amazon Web Services credential, used to authenticate S3 requests.
 > Default value:       | _none_
 > Type:                | optional string
 
-Amazon Web Services credential, used to authenticate S3 requests.
+Amazon Web Services password, used to authenticate S3 requests.
 
 
 ### `BASHMENOT_S3_ENDPOINT`
 
 > ---------------------|---
 > Default value:       | `s3.amazonaws.com`
-> Type:                | hostname
+> Type:                | address
 
-Hostname of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) responsible for [`BASHMENOT_S3_BUCKET`](#bashmenot_s3_bucket).
+Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) in which [`BASHMENOT_S3_BUCKET`](#bashmenot_s3_bucket) is located.
 
 
 ### `BASHMENOT_NO_S3_AUTH`
@@ -73,7 +53,27 @@ Hostname of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general
 > Default value:       | `0`
 > Type:                | `0` or `1`
 
-Disables authenticating S3 requests.
+Prevents authenticating S3 requests.
+
+
+### `BASHMENOT_URL`
+
+> ---------------------|---
+> Default value:       | [`https://github.com/mietek/bashmenot`](https://github.com/mietek/bashmenot)
+> Type:                | _git_ URL
+
+URL of the _git_ repository from which _bashmenot_ updates itself.
+
+The `master` branch is used by default.  Other branches may be specified with a `#`_`branch`_ suffix.
+
+
+### `BASHMENOT_NO_SELF_UPDATE`
+
+> ---------------------|---
+> Default value:       | `0`
+> Type:                | `0` or `1`
+
+Prevents _bashmenot_ from updating itself.
 
 
 Logging module
