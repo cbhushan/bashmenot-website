@@ -30,8 +30,8 @@ Usage
 _bashmenot_ is installed with _git_, and automatically keeps itself up-to-date.
 
 ```
-# git clone https://github.com/mietek/bashmenot
-# source bashmenot/src.sh
+$ git clone https://github.com/mietek/bashmenot
+$ source bashmenot/src.sh
 ```
 
 
