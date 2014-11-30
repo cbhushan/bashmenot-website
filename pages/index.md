@@ -29,10 +29,9 @@ Usage
 
 _bashmenot_ is installed with _git_, and automatically keeps itself up-to-date.
 
-```
-$ git clone https://github.com/mietek/bashmenot
-$ source bashmenot/src.sh
-```
+<pre class="with-tweaks"><code><span class="prompt">$</span> <span class="input">git clone <a href="https://github.com/mietek/bashmenot/">https://github.com/mietek/bashmenot</a></span>
+<span class="prompt">$</span> <span class="input">source bashmenot/src.sh</span>
+</code></pre>
 
 
 ### Documentation
