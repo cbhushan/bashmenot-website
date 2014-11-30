@@ -26,7 +26,7 @@ Environment variables
 > Default value:       | `0`
 > Type:                | `0` or `1`
 
-Adds a prefix with the current time to each logged message.
+Prefixes each logged message with the current time.
 
 
 ### `BASHMENOT_TIMESTAMP_EPOCH`
