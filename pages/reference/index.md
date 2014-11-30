@@ -544,6 +544,20 @@ foo
 ```
 
 
+### `filter_not_first`
+
+> ---------------------|---
+> Arguments:           | _none_
+
+Outputs all lines of input except the first.  Never fails.
+
+```
+$ echo -e "foo\nbar\nbaz" | filter_not_first
+bar
+baz
+```
+
+
 ### `filter_last`
 
 > ---------------------|---
