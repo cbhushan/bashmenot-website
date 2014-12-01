@@ -74,6 +74,20 @@ Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/
 Prevents authenticating S3 requests.
 
 
+### `BASHMENOT_DIR`
+
+> ---------------------|---
+> Default value:       | _variable_
+> Type:                | _read-only string_
+> Command-line option: | _none_
+
+Directory in which _bashmenot_ is installed.
+
+```
+$ source "${BASHMENOT_DIR}/src.sh"
+```
+
+
 ### `BASHMENOT_URL`
 
 > ---------------------|---
