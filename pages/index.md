@@ -16,7 +16,7 @@ page-footer: |
 _bashmenot_
 ===========
 
-_bashmenot_ is a library of shell functions, powering [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
+_bashmenot_ is a library of shell functions, used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
 
 
 ### Support
