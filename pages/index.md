@@ -27,7 +27,7 @@ Please report any problems with _bashmenot_ on the [issue tracker](https://githu
 Usage
 -----
 
-_bashmenot_ is installed with _git_, and automatically keeps itself up-to-date.
+_bashmenot_ is installed with _git_, and automatically updates when the top-level `src.sh` file is sourced.
 
 <pre class="with-tweaks"><code><span class="prompt">$</span> <span class="input">git clone <a href="https://github.com/mietek/bashmenot/">https://github.com/mietek/bashmenot</a></span>
 <span class="prompt">$</span> <span class="input">source bashmenot/src.sh</span>
