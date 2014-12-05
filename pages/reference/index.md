@@ -33,7 +33,7 @@ Prefixes each logged message with the current time.
 
 > ---------------------|---
 > Default value:       | _none_
-> Type:                | optional seconds
+> Type:                | seconds, optional
 
 When set, any logged timestamps will show the difference between the current time and the specified time, in seconds.
 
@@ -42,7 +42,7 @@ When set, any logged timestamps will show the difference between the current tim
 
 > ---------------------|---
 > Default value:       | _none_
-> Type:                | optional string
+> Type:                | string, optional
 
 Amazon Web Services username, used to authenticate S3 requests.
 
@@ -51,7 +51,7 @@ Amazon Web Services username, used to authenticate S3 requests.
 
 > ---------------------|---
 > Default value:       | _none_
-> Type:                | optional string
+> Type:                | string, optional
 
 Amazon Web Services password, used to authenticate S3 requests.
 
@@ -606,7 +606,7 @@ bar
 
 Outputs all lines of input which match the specified regular expression.  Never fails, unless _`pattern`_ is missing.
 
-Uses `awk`.
+_`pattern`_ is an _awk_ regular expression.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_matching '^bar$'
@@ -621,7 +621,7 @@ bar
 
 Outputs all lines of input which do not match the specified regular expression.  Never fails, unless _`pattern`_ is missing.
 
-Uses `awk`.
+_`pattern`_ is an _awk_ regular expression.
 
 ```
 $ echo -e "foo\nbar\nbaz" | filter_not_matching '^bar$'
@@ -1284,7 +1284,9 @@ $ s3_check foo.example.com no-foo
 
 Uploads the specified file to S3 with HTTP `PUT`.
 
-Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).  Commonly used values are `private` and `public-read`.
+Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+
+Commonly used values are `private` and `public-read`.
 
 ```
 $ s3_upload foo foo.example.com bar/foo private
