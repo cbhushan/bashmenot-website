@@ -58,7 +58,7 @@ _bashmenot_ is built with [GNU _bash_](https://gnu.org/software/bash/) 4, and re
 About
 -----
 
-<span id="mietek"></span>
+<a class="face mietek" href="https://mietek.io/"></a>
 
 My name is [Miëtek Bak](https://mietek.io/).  I make software, and _bashmenot_ is one of [my projects](https://mietek.io/projects/).
 
