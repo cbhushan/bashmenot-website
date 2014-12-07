@@ -46,7 +46,7 @@ _bashmenot_ is installed with _git_, and automatically updates itself when the t
 
 ### Dependencies
 
-_bashmenot_ is built with [GNU _bash_](https://gnu.org/software/bash/) 4, and requires:
+_bashmenot_ is written in [GNU _bash_](https://gnu.org/software/bash/), and requires:
 
 - [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html) — for date formatting
 - [GNU _sort_](https://gnu.org/software/coreutils/manual/html_node/sort-invocation.html) — for sorting
