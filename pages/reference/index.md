@@ -38,6 +38,15 @@ Prefixes each logged message with the current time.
 When set, any logged timestamps will show the difference between the current time and the specified time, in seconds.
 
 
+### `BASHMENOT_CURL_RETRIES`
+
+> ---------------------|---
+> Default value:       | `3`
+> Type:                | integer
+
+Number of times for _curl_ to retry a transfer which failed due to a transient error.
+
+
 ### `BASHMENOT_AWS_ACCESS_KEY_ID`
 
 > ---------------------|---
