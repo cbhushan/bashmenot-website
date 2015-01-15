@@ -134,7 +134,7 @@ Date formatting module
 
 Outputs a UTC date and time in RFC 2822 format.
 
-Uses `date` on Linux, and `gdate` on other platforms, passing any additional arguments to the tool.
+Uses `date -Ru` on Linux and FreeBSD, and `gdate -Ru` on other platforms, passing any additional arguments to the tool.
 
 ```
 $ get_http_date
@@ -149,7 +149,7 @@ Fri, 05 Nov 2014 23:59:59 +0000
 
 Wrapper for GNU _date_.
 
-Uses `date` on Linux, and `gdate` on other platforms, passing any additional arguments to the tool.
+Uses `date -u` on Linux and FreeBSD, and `gdate -u` on other platforms, passing any additional arguments to the tool.
 
 ```
 $ get_date '+%Y-%m-%d'
@@ -172,7 +172,7 @@ Sorting module
 
 Portable natural sort.  Never fails.
 
-Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.
+Uses `sort -V` on Linux and FreeBSD, and `gsort -V` on other platforms, passing any additional arguments to the tool.
 
 ```
 $ echo -e "foo-1\nfoo-12\nfoo-2" | sort_natural
@@ -195,7 +195,7 @@ foo-2
 
 Portable natural sort, for input separated by `NUL` bytes instead of newlines.  Never fails.
 
-Uses `sort` on Linux, and `gsort` on other platforms, passing any additional arguments to the tool.
+Uses `sort -Vz` on Linux and FreeBSD, and `gsort -Vz` on other platforms, passing any additional arguments to the tool.
 
 
 Logging module
@@ -780,7 +780,7 @@ $ get_size foo
 
 Outputs the modification time of the specified file or directory, in seconds since the Unix epoch.
 
-Uses `stat -c "%Y"` on Linux, and `stat -f "%m"` on other platforms.
+Uses `stat -c "%Y"` on Linux, and `stat -f "%m"` on FreeBSD and other platforms.
 
 ```
 $ touch foo
@@ -1049,7 +1049,7 @@ The `gz`, `bz2`, and `xz` compression formats are supported.  The `pigz`, `pbzip
 
 Strips object file symbols from all files found in the specified directory.  Never fails.
 
-Uses `strip --strip-unneeded` on Linux, `strip -u -r` on OS X, and does nothing on other platforms.  Also uses `find`, passing any additional arguments to the tool.
+Uses `strip --strip-unneeded` on Linux and FreeBSD, `strip -u -r` on OS X, and does nothing on other platforms.  Also uses `find`, passing any additional arguments to the tool.
 
 
 Version control module
