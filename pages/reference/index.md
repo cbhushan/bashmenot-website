@@ -96,6 +96,8 @@ Directory in which _bashmenot_ is installed.
 $ source "${BASHMENOT_DIR}/src.sh"
 ```
 
+Automatically set by _bashmenot_ at run-time.
+
 
 ### `BASHMENOT_URL`
 
