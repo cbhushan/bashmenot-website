@@ -93,7 +93,7 @@ Amazon Web Services password, used to authenticate S3 requests.
 > Default value:       | `s3.amazonaws.com`
 > Type:                | address
 
-Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) in which [`BASHMENOT_S3_BUCKET`](#bashmenot_s3_bucket) is located.
+Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) in which the referenced S3 buckets are located.
 
 
 ### `BASHMENOT_NO_S3_AUTH`
