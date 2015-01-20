@@ -1,5 +1,5 @@
 ---
-title: Programmer’s reference
+title: Reference
 page-class: add-section-toc rule-before-h3 tweak-listings
 page-data:
 - key: max-back-link-level
@@ -13,8 +13,12 @@ page-head: |
 ---
 
 
-Programmer’s reference
-======================
+_bashmenot_ reference
+=====================
+
+_bashmenot_ is a library of [GNU _bash_](https://gnu.org/software/bash/) functions, used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
+
+This reference is a complete list of available functions and options.
 
 
 Environment variables
@@ -41,10 +45,28 @@ When set, any logged timestamps will show the difference between the current tim
 ### `BASHMENOT_CURL_RETRIES`
 
 > ---------------------|---
-> Default value:       | `3`
+> Default value:       | `8`
 > Type:                | integer
 
-Number of times for _curl_ to retry a transfer which failed due to a transient error.
+Number of times for _curl_ to retry a transfer which failed due to a transient error.  Uses the _curl_ `--retry` option.
+
+
+### `BASHMENOT_CURL_CONTINUE_RETRIES`
+
+> ---------------------|---
+> Default value:       | `4`
+> Type:                | integer
+
+Number of times for _curl_ to retry a transfer which failed with a `100 Continue` status.  Works around a _curl_ issue.
+
+
+### `BASHMENOT_APT_DIR`
+
+> ---------------------|---
+> Default value:       | _none_
+> Type:                | string
+
+_TODO_
 
 
 ### `BASHMENOT_AWS_ACCESS_KEY_ID`
@@ -80,7 +102,7 @@ Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/
 > Default value:       | `0`
 > Type:                | `0` or `1`
 
-Prevents authenticating S3 requests.
+Prevents _bashmenot_ from authenticating S3 requests.
 
 
 ### `BASHMENOT_DIR`
@@ -107,7 +129,7 @@ Automatically set by _bashmenot_ at run-time.
 
 URL of the _git_ repository from which _bashmenot_ updates itself.
 
-The `master` branch is used by default.  Other branches may be specified with a `#`_`branch`_ suffix.
+Defaults to the `master` branch.  Other branches can be specified with a `#`_`branch`_ suffix.
 
 
 ### `BASHMENOT_NO_SELF_UPDATE`
@@ -127,12 +149,27 @@ Date formatting module
 > Dependencies:        | [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 
 
+### `get_date`
+
+> ---------------------|---
+> Arguments:           | _`any*`_
+
+Wrapper for GNU _date_.  Never fails.
+
+Uses `date -u` on Linux and FreeBSD, and `gdate -u` on other platforms, passing any additional arguments to the tool.
+
+```
+$ get_date '+%Y-%m-%d'
+2014-11-05
+```
+
+
 ### `get_http_date`
 
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Outputs a UTC date and time in RFC 2822 format.
+Outputs a UTC date and time in RFC 2822 format.  Never fails.
 
 Uses `date -Ru` on Linux and FreeBSD, and `gdate -Ru` on other platforms, passing any additional arguments to the tool.
 
@@ -142,18 +179,18 @@ Fri, 05 Nov 2014 23:59:59 +0000
 ```
 
 
-### `get_date`
+### `get_current_time`
 
 > ---------------------|---
 > Arguments:           | _`any*`_
 
-Wrapper for GNU _date_.
+Outputs a UTC date and time as seconds since the <span class="small-caps">Unix</span> epoch.  Never fails.
 
-Uses `date -u` on Linux and FreeBSD, and `gdate -u` on other platforms, passing any additional arguments to the tool.
+Uses `date '+%s' -u` on Linux and FreeBSD, and `gdate '+%s' -u` on other platforms, passing any additional arguments to the tool.
 
 ```
-$ get_date '+%Y-%m-%d'
-2014-11-05
+$ get_current_time
+1415231999
 ```
 
 
@@ -255,7 +292,7 @@ Logs arguments to error output, prefixed by an arrow marker, and with a space in
 
 Logs arguments to error output, with no prefix.  Never fails.
 
-To be paired with [`log_begin`](/reference/#log_begin).
+To be paired with [`log_begin`](#log_begin).
 
 ```
 function foo () {
@@ -274,7 +311,7 @@ $ foo
 
 Logs arguments to error output, prefixed by whitespace.  Never fails.
 
-For less important messages than [`log`](/reference/#log).
+For less important messages than [`log`](#log).
 
 ```
 $ log_indent baring
@@ -289,7 +326,7 @@ $ log_indent baring
 
 Logs arguments to error output, prefixed by whitespace, and with a space instead of a newline at the end.  Never fails.
 
-For less important messages than [`log_begin`](/reference/#log_begin).
+For less important messages than [`log_begin`](#log_begin).
 
 
 ### `log_indent_end`
@@ -299,7 +336,7 @@ For less important messages than [`log_begin`](/reference/#log_begin).
 
 Logs arguments to error output, with no prefix.  Never fails.
 
-To be paired with [`log_indent_begin`](/reference/#log_begin).
+To be paired with [`log_indent_begin`](#log_begin).
 
 ```
 function bar () {
@@ -320,7 +357,7 @@ Logs arguments to error output, prefixed by an arrow marker, and with padding be
 
 ```
 $ log_label foo: bar
------> foo:                                      bar
+-----> foo:                                      **bar**
 ```
 
 
@@ -331,11 +368,11 @@ $ log_label foo: bar
 
 Logs arguments to error output, prefixed by whitespace, and with padding between _`label`_ and the other arguments.  Never fails.
 
-For less important messages than [`log_label`](/reference/#log_label).
+For less important messages than [`log_label`](#log_label).
 
 ```
 $ log_indent_label foo: bar
-       foo:                                      bar
+       foo:                                      **bar**
 ```
 
 
@@ -348,7 +385,7 @@ Logs arguments to error output, prefixed by a debug marker.  Never fails.
 
 ```
 $ log_debug foo
-   *** DEBUG: foo
+**   *** DEBUG: foo**
 ```
 
 
@@ -361,7 +398,7 @@ Logs arguments to error output, prefixed by a warning marker.  Never fails.
 
 ```
 $ log_warning foo
-   *** WARNING: foo
+**   *** WARNING: foo**
 ```
 
 
@@ -374,7 +411,7 @@ Logs arguments to error output, prefixed by an error marker.  Never fails.
 
 ```
 $ log_error foo
-   *** ERROR: foo
+**   *** ERROR: foo**
 ```
 
 
@@ -403,7 +440,7 @@ function foo () {
   false || die foo
 }
 $ foo
-   *** ERROR: foo
+**   *** ERROR: foo**
 ^D
 ```
 
@@ -421,9 +458,9 @@ Expectation control module
 > ---------------------|---
 > Arguments:           | _`var*`_` -- "$@"`
 
-First, checks the required number of arguments is available; dies otherwise.  Next, sets the specified variables to the values of the appropriate arguments.
+First, checks the required number of arguments is available; otherwise, dies.  Next, sets the specified variables to the values of the appropriate arguments.
 
-Must be called with a literal ` -- "$@"` after the variable names.  Argument values may be empty.
+Must be called with a literal ` -- "$@"` after the variable names.  Argument values can be empty.
 
 ```
 function foo () {
@@ -432,7 +469,8 @@ function foo () {
   echo "${bar} ${baz}"
 }
 $ foo
-   *** ERROR: foo: Expected args: bar baz
+**   *** ERROR: foo: Expected args: bar baz**
+^D
 ```
 
 
@@ -441,7 +479,7 @@ $ foo
 > ---------------------|---
 > Arguments:           | _`var*`_
 
-Checks the specified variables are set and not empty; dies otherwise.
+Checks the specified variables are set and not empty; otherwise, dies.
 
 ```
 function foo () {
@@ -449,7 +487,8 @@ function foo () {
   echo "${BAR}"
 }
 $ foo
-   *** ERROR: foo: Expected var: BAR
+**   *** ERROR: foo: Expected var: BAR**
+^D
 ```
 
 
@@ -458,7 +497,7 @@ $ foo
 > ---------------------|---
 > Arguments:           | _`thing*`_
 
-Checks the specified files or directories exist; dies otherwise.
+Checks the specified files or directories exist; otherwise, fails.
 
 ```
 function foo () {
@@ -466,7 +505,7 @@ function foo () {
   cat bar
 }
 $ foo
-   *** ERROR: foo: Expected existing bar
+**   *** ERROR: foo: Expected existing bar**
 ```
 
 
@@ -475,7 +514,7 @@ $ foo
 > ---------------------|---
 > Arguments:           | _`thing*`_
 
-Checks the specified files or directories do not exist; dies otherwise.
+Checks the specified files or directories do not exist; otherwise, fails.
 
 ```
 function foo () {
@@ -484,7 +523,7 @@ function foo () {
 }
 $ touch bar
 $ foo
-   *** ERROR: foo: Unexpected existing bar
+**   *** ERROR: foo: Unexpected existing bar**
 ```
 
 
@@ -778,7 +817,7 @@ $ get_size foo
 > ---------------------|---
 > Arguments:           | _`thing`_
 
-Outputs the modification time of the specified file or directory, in seconds since the Unix epoch.
+Outputs the modification time of the specified file or directory, in seconds since the <span class="small-caps">Unix</span> epoch.
 
 Uses `stat -c "%Y"` on Linux, and `stat -f "%m"` on FreeBSD and other platforms.
 
@@ -813,6 +852,14 @@ Outputs the name of the specified directory.
 $ get_dir_name .
 baz
 ```
+
+
+### `get_link_path`
+
+> ---------------------|---
+> Arguments:           | _`link`_
+
+_TODO_
 
 
 ### `find_tree`
@@ -870,7 +917,7 @@ bar
 
 Outputs relative paths to files which do not differ between the two directories, in natural order.  Never fails.
 
-Complementary to [find_changed](/reference/#find_changed).
+Complementary to [find_changed](#find_changed).
 
 ```
 $ mkdir foo1 foo2
@@ -901,7 +948,7 @@ bar1
 > ---------------------|---
 > Arguments:           | _`old_dir new_dir`_
 
-Like [`find_added`](/reference/#find_added), [`find_changed`](/reference/#find_changed), [`find_not_changed`](/reference/#find_not_changed), and [`find_removed`](/reference/#find_removed) combined.  Never fails.
+Like [`find_added`](#find_added), [`find_changed`](#find_changed), [`find_not_changed`](#find_not_changed), and [`find_removed`](#find_removed) combined.  Never fails.
 
 Prefixes paths by `+` for added, `*` for changed, `=` for not changed, and `-` for removed.
 
@@ -974,6 +1021,22 @@ Archiving module
 Copies the specified file over the destination file.
 
 Overwrites existing files.  Creates the destination directory if needed.
+
+
+### `copy_dir_entry_into`
+
+> ---------------------|---
+> Arguments:           | _`src_dir src_file dst_dir`_
+
+_TODO_
+
+
+### `copy_dir_glob_into`
+
+> ---------------------|---
+> Arguments:           | _`src_dir src_glob dst_dir`_
+
+_TODO_
 
 
 ### `copy_dir_into`
@@ -1060,19 +1123,6 @@ Version control module
 > Dependencies:        | [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [_git_](http://git-scm.com/)
 
 
-### `hash_newest_git_commit`
-
-> ---------------------|---
-> Arguments:           | _`dir`_
-
-Outputs a SHA1 digest of the specified repository `HEAD`, when the repository is not empty; nothing otherwise.  Never fails, unless _`dir`_ does not exist.
-
-```
-$ hash_newest_git_commit .
-d0ed0f48014efba06069abe3e1776a379612a0fa
-```
-
-
 ### `validate_git_url`
 
 > ---------------------|---
@@ -1090,14 +1140,37 @@ $ validate_git_url foo ; echo $?
 ```
 
 
-### `quiet_git_do`
+### `git_do`
 
 > ---------------------|---
-> Arguments:           | _`cmd any*`_
+> Arguments:           | _`work_dir cmd any*`_
 
 Wrapper for _git_.
 
 Used by the following functions in this module.  Passes any additional arguments to the tool.
+
+
+### `quiet_git_do`
+
+> ---------------------|---
+> Arguments:           | _`work_dir cmd any*`_
+
+Wrapper for _git_, ignoring all output.
+
+Passes any additional arguments to the tool.
+
+
+### `hash_newest_git_commit`
+
+> ---------------------|---
+> Arguments:           | _`dir`_
+
+Outputs a SHA1 digest of the specified repository `HEAD`, when the repository is not empty; nothing otherwise.  Never fails, unless _`dir`_ does not exist.
+
+```
+$ hash_newest_git_commit .
+d0ed0f48014efba06069abe3e1776a379612a0fa
+```
 
 
 ### `git_clone_over`
@@ -1107,7 +1180,9 @@ Used by the following functions in this module.  Passes any additional arguments
 
 Clones the specified repository over the destination directory, along with any submodules, and outputs the hash of the newest commit.
 
-Removes the destination directory.  Creates the destination directory if needed.  Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
+Removes the destination directory.  Creates the destination directory if needed.
+
+Defaults to the `master` branch.  Other branches can be specified with a `#`_`branch`_ suffix.
 
 ```
 $ git_clone_over https://github.com/mietek/bashmenot foo
@@ -1122,12 +1197,84 @@ df22d6d7b0d7ca83195088206e689f6d13ac2be0
 
 Ensures the destination directory contains an up-to-date checkout of the specified repository, along with any submodules, and outputs the hash of the newest commit.
 
-Defaults to the `master` branch.  Another branch may be specified with a `#`_`branch`_ suffix.
+Defaults to the `master` branch.  Other branches can be specified with a `#`_`branch`_ suffix.
 
 ```
 $ git_update_into https://github.com/mietek/bashmenot foo
 df22d6d7b0d7ca83195088206e689f6d13ac2be0
 ```
+
+
+### `git_acquire`
+
+> ---------------------|---
+> Arguments:           | _`src_dir thing dst_dir`_
+
+_TODO_
+
+
+### `git_acquire_all`
+
+> ---------------------|---
+> Arguments:           | _`src_dir things dst_dir`_
+
+_TODO_
+
+
+Package installation module
+---------------------------
+
+> ---------------------|---
+> Source:              | [`package.sh`](https://github.com/mietek/bashmenot/blob/master/src/package.sh)
+> Dependencies:        | [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`sort.sh`](https://github.com/mietek/bashmenot/blob/master/src/sort.sh), [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`platform.sh`](https://github.com/mietek/bashmenot/blob/master/src/platform.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`file.sh`](https://github.com/mietek/bashmenot/blob/master/src/file.sh)
+
+
+### `fix_broken_links`
+
+> ---------------------|---
+> Arguments:           | _`dst_dir`_
+
+_TODO_
+
+
+### `install_deb_package`
+
+> ---------------------|---
+> Arguments:           | _`package_file dst_dir`_
+
+_TODO_
+
+
+### `install_rpm_package`
+
+> ---------------------|---
+> Arguments:           | _`package_file dst_dir`_
+
+_TODO_
+
+
+### `install_debian_packages`
+
+> ---------------------|---
+> Arguments:           | _`names dst_dir`_
+
+_TODO_
+
+
+### `install_redhat_packages`
+
+> ---------------------|---
+> Arguments:           | _`names dst_dir`_
+
+_TODO_
+
+
+### `install_platform_packages`
+
+> ---------------------|---
+> Arguments:           | _`specs dst_dir`_
+
+_TODO_
 
 
 Remote storage module
@@ -1232,7 +1379,7 @@ Amazon S3 storage module
 
 Outputs the S3 URL of the specified resource.
 
-References [`BASHMENOT_S3_ENDPOINT`](/reference/#bashmenot_s3_endpoint).
+References [`BASHMENOT_S3_ENDPOINT`](#bashmenot_s3_endpoint).
 
 ```
 $ format_s3_url /foo/bar
@@ -1253,9 +1400,9 @@ Parses an S3 bucket listing in XML format into a file of objects.
 > ---------------------|---
 > Arguments:           | _`url any*`_
 
-S3-specific wrapper for [`curl_do`](/reference/#curl_do), supporting [S3 <abbr title="Representational state transfer">REST</abbr> authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
+S3-specific wrapper for [`curl_do`](#curl_do), supporting [S3 REST authentication](https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html).
 
-Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](/reference/#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](/reference/#bashmenot_aws_secret_access_key), unless [`BASHMENOT_NO_S3_AUTH`](/reference/#bashmenot_no_s3_auth) is set to `1`.  Uses `curl`, passing any additional arguments to the tool.
+Used by most functions in this module.  References [`BASHMENOT_AWS_ACCESS_KEY_ID`](#bashmenot_aws_access_key_id) and [`BASHMENOT_AWS_SECRET_ACCESS_KEY`](#bashmenot_aws_secret_access_key), unless [`BASHMENOT_NO_S3_AUTH`](#bashmenot_no_s3_auth) is set to `1`.  Uses `curl`, passing any additional arguments to the tool.
 
 
 ### `s3_download`
@@ -1280,7 +1427,7 @@ $ s3_download foo.example.com foo/bar bar
 
 Accesses the specified S3 resource with HTTP `HEAD`.
 
-An empty source object may be specified to access the bucket itself.
+An empty source object can be specified to access the bucket itself.
 
 ```
 $ s3_check foo.example.com no-foo
@@ -1295,7 +1442,7 @@ $ s3_check foo.example.com no-foo
 
 Uploads the specified file to S3 with HTTP `PUT`.
 
-Overwrites existing resources.  The destination resource is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+Overwrites existing resources.  The destination resource is assigned the specified [S3 ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 Commonly used values are `private` and `public-read`.
 
@@ -1312,7 +1459,7 @@ $ s3_upload foo foo.example.com bar/foo private
 
 Creates an S3 bucket with HTTP `PUT`.
 
-The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+The destination is assigned the specified [S3 ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
 $ s3_create foo.example.com private
@@ -1327,7 +1474,7 @@ $ s3_create foo.example.com private
 
 Copies the specified resource on S3 with HTTP `PUT`, without downloading or uploading the resource data.
 
-The source and destination may be the same bucket or separate buckets.  The destination is assigned the specified [S3 <abbr title="Access control list">ACL</abbr>](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
+The source and destination can be the same bucket or separate buckets.  The destination is assigned the specified [S3 ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html).
 
 ```
 $ s3_copy foo.example.com foo bar.example.com bar private
@@ -1342,7 +1489,7 @@ $ s3_copy foo.example.com foo bar.example.com bar private
 
 Deletes the specified resource from S3 with HTTP `DELETE`.
 
-An empty destination object may be specified to delete the bucket itself.
+An empty destination object can be specified to delete the bucket itself.
 
 ```
 $ s3_delete foo.example.com foo/bar
@@ -1377,7 +1524,7 @@ baz
 
 Outputs the contents of the specified S3 bucket, downloaded with HTTP `GET`, listing the resources which start with the specified prefix.
 
-An empty prefix may be specified to list the contents of the entire bucket.
+An empty prefix can be specified to list the contents of the entire bucket.
 
 ```
 $ s3_list foo.example.com foo
