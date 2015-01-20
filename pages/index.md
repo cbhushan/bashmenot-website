@@ -1,6 +1,6 @@
 ---
-title: Shell function library
-page-description: bashmenot is a library of shell functions for GNU bash.
+title: Library of GNU bash functions
+page-description: bashmenot is a library of GNU bash functions.
 page-class: index tweak-listings
 page-footer: |
   <script>
@@ -16,7 +16,7 @@ page-footer: |
 _bashmenot_
 ===========
 
-_bashmenot_ is a library of shell functions, used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
+_bashmenot_ is a library of [GNU _bash_](https://gnu.org/software/bash/) functions, used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
 
 
 ### Support
@@ -27,24 +27,25 @@ Please report any problems with _bashmenot_ on the [issue tracker](https://githu
 Usage
 -----
 
-_bashmenot_ is installed with _git_, and automatically updates itself when the top-level `src.sh` file is sourced.
+```
+$ source bashmenot/src.sh
+```
 
-<pre class="with-tweaks"><code><span class="prompt">$</span> <span class="input">git clone <a href="https://github.com/mietek/bashmenot">https://github.com/mietek/bashmenot</a></span>
-<span class="prompt">$</span> <span class="input">source bashmenot/src.sh</span>
-</code></pre>
+_bashmenot_ can be installed by cloning the [_git_ repository](https://github.com/mietek/bashmenot):
+
+```
+$ git clone https://github.com/mietek/bashmenot
+```
 
 
 ### Documentation
 
-<div><nav>
-<ul class="menu open">
-<li><a href="/reference/">Programmer’s reference</a></li>
-<li><a href="https://github.com/mietek/bashmenot">Source code</a></li>
-</ul>
-</nav></div>
+- See the [_bashmenot_ reference](https://bashmenot.mietek.io/reference/) for a complete list of available functions and options.
+
+- Read the [_bashmenot_ source code](https://github.com/mietek/bashmenot) to understand how it works.
 
 
-### Dependencies
+#### Dependencies
 
 _bashmenot_ is written in [GNU _bash_](https://gnu.org/software/bash/), and requires:
 
@@ -74,5 +75,3 @@ _Like my work?  I am available for consulting.  Say <a class="hello" href="">hel
 Thanks to [Kenneth Reitz](http://kennethreitz.org/) for building [_httpbin_](https://httpbin.org/).
 
 The monospaced font is [PragmataPro](http://fsd.it/fonts/pragmatapro.htm), by [Fabrizio Schiavi](http://fsd.it/).  The sans-serif font is [Concourse](http://practicaltypography.com/concourse.html), by [Matthew Butterick](http://practicaltypography.com/).  Website built with [_cannot_](https://cannot.mietek.io/).
-
-This project is not affiliated with [Heroku](https://heroku.com/) or [Amazon](https://amazon.com/).
