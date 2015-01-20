@@ -240,7 +240,7 @@ Logging module
 
 > ---------------------|---
 > Source:              | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh)
-> Dependencies:        | [`datetime.sh`](https://github.com/mietek/bashmenot/blob/master/src/datetime.sh)
+> Dependencies:        | [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh)
 
 
 ### `prefix_log`
@@ -1369,7 +1369,7 @@ Amazon S3 storage module
 
 > ---------------------|---
 > Source:              | [`s3.sh`](https://github.com/mietek/bashmenot/blob/master/src/s3.sh)
-> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`datetime.sh`](https://github.com/mietek/bashmenot/blob/master/src/datetime.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://openssl.org/)
+> Dependencies:        | [`log.sh`](https://github.com/mietek/bashmenot/blob/master/src/log.sh), [`expect.sh`](https://github.com/mietek/bashmenot/blob/master/src/expect.sh), [`line.sh`](https://github.com/mietek/bashmenot/blob/master/src/line.sh), [`date.sh`](https://github.com/mietek/bashmenot/blob/master/src/date.sh), [`curl.sh`](https://github.com/mietek/bashmenot/blob/master/src/curl.sh), [GNU _date_](https://gnu.org/software/coreutils/manual/html_node/date-invocation.html), [_curl_](http://curl.haxx.se/), [OpenSSL](https://openssl.org/)
 
 
 ### `format_s3_url`
