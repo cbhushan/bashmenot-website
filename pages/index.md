@@ -31,7 +31,7 @@ Usage
 $ source bashmenot/src.sh
 ```
 
-_bashmenot_ can be installed by cloning the [_git_ repository](https://github.com/mietek/bashmenot):
+_bashmenot_ can be installed by cloning the [_bashmenot_ source repository](https://github.com/mietek/bashmenot):
 
 ```
 $ git clone https://github.com/mietek/bashmenot
