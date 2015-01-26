@@ -458,7 +458,7 @@ Expectation control module
 > ---------------------|---
 > Arguments:           | _`var*`_` -- "$@"`
 
-First, checks the required number of arguments is available; otherwise, dies.  Next, sets the specified variables to the values of the appropriate arguments.
+First, checks the required number of arguments is available; otherwise, dies.  Next, sets the specified variables to the values of the right arguments.
 
 Must be called with a literal ` -- "$@"` after the variable names.  Argument values can be empty.
 
