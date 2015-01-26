@@ -73,18 +73,18 @@ _TODO_
 
 > ---------------------|---
 > Default value:       | _none_
-> Type:                | string, optional
+> Type:                | 20-character string, optional
 
-Amazon Web Services username, used to authenticate S3 requests.
+Amazon Web Services access key ID, used to authenticate S3 requests.
 
 
 ### `BASHMENOT_AWS_SECRET_ACCESS_KEY`
 
 > ---------------------|---
 > Default value:       | _none_
-> Type:                | string, optional
+> Type:                | 40-character string, optional
 
-Amazon Web Services password, used to authenticate S3 requests.
+Amazon Web Services secret access key, used to authenticate S3 requests.
 
 
 ### `BASHMENOT_S3_ENDPOINT`
