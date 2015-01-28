@@ -45,19 +45,10 @@ When set, any logged timestamps will show the difference between the current tim
 ### `BASHMENOT_CURL_RETRIES`
 
 > ---------------------|---
-> Default value:       | `8`
+> Default value:       | `5`
 > Type:                | integer
 
-Number of times for _curl_ to retry a transfer which failed due to a transient error.  Uses the _curl_ `--retry` option.
-
-
-### `BASHMENOT_CURL_CONTINUE_RETRIES`
-
-> ---------------------|---
-> Default value:       | `4`
-> Type:                | integer
-
-Number of times for _curl_ to retry a transfer which failed with a `100 Continue` status.  Works around a _curl_ issue.
+Number of times to retry a transfer failing with transient errors.
 
 
 ### `BASHMENOT_APT_DIR`
