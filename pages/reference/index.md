@@ -57,7 +57,7 @@ Number of times to retry a transfer failing with transient errors.
 > Default value:       | _none_
 > Type:                | string
 
-_TODO_
+Directory in which _bashmenot_ caches recently used `apt-get` files.
 
 
 ### `BASHMENOT_AWS_ACCESS_KEY_ID`
