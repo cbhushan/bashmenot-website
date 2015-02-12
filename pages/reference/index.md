@@ -539,6 +539,22 @@ Ubuntu 14.04 LTS (x86_64)
 ```
 
 
+### `is_debian_like`
+
+> ---------------------|---
+> Arguments:           | _`platform`_
+
+Fails unless the specified platform identifier matches a Debian-like platform.
+
+
+### `is_redhat_like`
+
+> ---------------------|---
+> Arguments:           | _`platform`_
+
+Fails unless the specified platform identifier matches a Red Hat-like platform.
+
+
 ### `detect_os`
 
 > ---------------------|---
