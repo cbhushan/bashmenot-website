@@ -86,6 +86,13 @@ Amazon Web Services secret access key, used to authenticate S3 requests.
 
 Address of the [region-specific S3 endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) in which the referenced S3 buckets are located.
 
+**Note:**  Currently, the following S3 regions can’t be used:
+
+- China (Beijing)
+- EU (Frankfurt)
+
+See _bashmenot_ issue [`#9`](https://github.com/mietek/bashmenot/issues/9) for details.
+
 
 ### `BASHMENOT_NO_S3_AUTH`
 
