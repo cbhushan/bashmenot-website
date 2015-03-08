@@ -1,19 +1,21 @@
 @import "cannot/reset"
 @import "cannot/color"
-@import "cannot/private-fonts"
+@import "cannot/font"
 
 
-@include font-face(concourse-c3, regular)
-@include font-face(concourse-t3, regular)
-@include font-face(concourse-t3, italic)
-@include font-face(concourse-t3, bold)
-@include font-face(concourse-t3, bold-italic)
-@include font-face(concourse-t3-tab, regular)
-@include font-face(concourse-t3-tab, italic)
-@include font-face(pragmatapro, regular)
-@include font-face(pragmatapro, bold)
-@include font-face(pragmatapro, italic)
-@include font-face(pragmatapro, bold-italic)
+$font-url-base: "https://mietek.io/_protected/fonts"
+
+@include font("concourse-c3", "regular")
+@include font("concourse-t3", "regular")
+@include font("concourse-t3", "italic")
+@include font("concourse-t3", "bold")
+@include font("concourse-t3", "bold-italic")
+@include font("concourse-t3-tab", "regular")
+@include font("concourse-t3-tab", "italic")
+@include font("pragmatapro", "regular")
+@include font("pragmatapro", "bold")
+@include font("pragmatapro", "italic")
+@include font("pragmatapro", "bold-italic")
 
 
 @import "cannot/layout"

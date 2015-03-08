@@ -6,7 +6,6 @@
   ],
   "license": "MIT X11",
   "dependencies": {
-    "cannot": "*",
-    "cannot-private-fonts": "*"
+    "cannot": "*"
   }
 }
