@@ -20,6 +20,16 @@ _bashmenot_ is a library of [GNU _bash_](https://gnu.org/software/bash/) functio
 
 This reference is a complete list of available functions and options.
 
+* [Environment variables](#environment-variables)
+* [Date formatting module](#date-formatting-module)
+* [Expectation control module](#expectation-control-module)
+* [Platform detection module](#platform-detection-module)
+* [Line processing module](#line-processing-module)
+* [Version control module](#version-control-module)
+* [Package installation module](#package-installation-module)
+* [Remote storage module](#remote-storage-module)
+* [Amazon S3 storage module](#amazon-s3-storage-module)
+
 
 Environment variables
 ---------------------
