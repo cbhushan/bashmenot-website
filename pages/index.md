@@ -19,11 +19,6 @@ _bashmenot_
 _bashmenot_ is a library of [GNU _bash_](https://gnu.org/software/bash/) functions, used by [Halcyon](https://halcyon.sh/) and [Haskell on Heroku](https://haskellonheroku.com/).
 
 
-### Support
-
-Please report any problems with _bashmenot_ on the [issue tracker](https://github.com/mietek/bashmenot/issues/).  There is a [separate issue tracker](https://github.com/mietek/bashmenot-website/issues/) for problems with the documentation.
-
-
 Usage
 -----
 
@@ -40,7 +35,7 @@ $ git clone https://github.com/mietek/bashmenot
 
 ### Documentation
 
-- See the [_bashmenot_ reference](https://bashmenot.mietek.io/reference/) for a complete list of available functions and options.
+- See the [_bashmenot_ reference](https://cbhushan.github.io/bashmenot-website/pages/reference/) for a complete list of available functions and options.
 
 - Read the [_bashmenot_ source code](https://github.com/mietek/bashmenot) to understand how it works.
 
