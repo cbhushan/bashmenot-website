@@ -22,7 +22,12 @@ This reference is a complete list of available functions and options.
 
 * [Environment variables](#environment-variables)
 * [Date formatting module](#date-formatting-module)
+* [Sorting module](#sorting-module)
+* [Logging module](#logging-module)
 * [Expectation control module](#expectation-control-module)
+* [File system module](#file-system-module)
+* [Hashing module](#hashing-module)
+* [Archiving module](#archiving-module)
 * [Platform detection module](#platform-detection-module)
 * [Line processing module](#line-processing-module)
 * [Version control module](#version-control-module)

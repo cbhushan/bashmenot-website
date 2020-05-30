@@ -1,19 +1,16 @@
--------------------------------------------------------------------------------
-
-This project is no longer maintained.
-
--------------------------------------------------------------------------------
-
-
 _bashmenot-website_
 ===================
 
-Website for [_bashmenot_](https://bashmenot.mietek.io/).
+Website for _bashmenot_.
 
-Built with [_cannot_](https://cannot.mietek.io/).
+This is a fork to get (barely) function documentation of [_bashmenot_](https://github.com/cbhushan/script-collection/tree/master/bashmenot) in form of a website because the [original website](https://bashmenot.mietek.io/) is no longer accessible.
+
+- See updated [_bashmenot_ reference](hhttps://cbhushan.github.io/bashmenot-website/pages/reference/) for a complete list of available functions and options.
+
+- Read the [_bashmenot_ source code](https://github.com/mietek/bashmenot) to understand how it works.
 
 
 About
 -----
 
-Made by [Miëtek Bak](https://mietek.io/).  Published under the BSD license.
+Originally made by [Miëtek Bak](https://mietek.io/).  Published under the BSD license.
